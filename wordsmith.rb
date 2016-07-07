@@ -762,12 +762,11 @@ def scrapeMultiple(infile)
     cewl = %x[ruby cewl/cewl.rb #{url}]
     if cewl.include? "Unable to connect to the site"
       puts "-- Unable to connect to the site"
+      count = count + 1
     else
       # remove first two entries (CeWL banner and blank line), append to array
       allCewls = allCewls + (cewl.split("\n").drop(2))
-      puts ""
       puts "Total words that CeWL grabbed from #{url.chomp} is: #{cewl.length}"
-      puts ""
       count = count + 1
     end
   end
@@ -775,7 +774,17 @@ def scrapeMultiple(infile)
   # sort and uniq
   result = allCewls.sort.uniq
   @allCewls = postProcessor(result)
-  puts "Total unique words that CeWL grabbed from all URL's is: #{@allCewls.length}"
+  if @allCewls.nil?
+    puts "All URLs seems to be incorrect. Please check them in a web browser and try again."
+    puts "Total unique words that CeWL grabbed from is: 0"
+  else
+    if $quiet != true
+      puts @allCewls
+      puts ""
+    end
+  end
+
+  puts "Total unique words that CeWL grabbed from all URLs is: #{@allCewls.length}"
 end
 
 # run all functions against the specified state

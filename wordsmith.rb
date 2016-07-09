@@ -726,10 +726,26 @@ def names()
   puts "Total common names in the USA is: #{@allNames.length}"
 end
 
+# Cross-platform way of finding an executable in the $PATH.
+def which(cmd)
+  exts = ENV['PATHEXT'] ? ENV['PATHEXT'].split(';') : ['']
+  ENV['PATH'].split(File::PATH_SEPARATOR).each do |path|
+    exts.each { |ext|
+      exe = File.join(path, "#{cmd}#{ext}")
+      return exe if File.executable?(exe) && !File.directory?(exe)
+    }
+  end
+  return nil
+end
+
 # run CeWL against the specified URL
 def scrapeSingle(url)
+  if which("cewl").nil?
+    cewl = %x[ruby cewl/cewl.rb #{url}]
+  else
+    cewl = %x[cewl #{url}]
+  end
   puts "Running CeWL against: #{url}"
-  cewl = %x[ruby cewl/cewl.rb #{url}]
   # convert to array, remove first two entries (CeWL banner and blank line)
   # sort and uniq
   result = cewl.split("\n").drop(2).sort.uniq
@@ -757,9 +773,17 @@ def scrapeMultiple(infile)
   count = 1
   lineCount = File.foreach(input).count
 
+  if which("cewl").nil?
+    cewlcmd = "ruby cewl/cewl.rb"
+  else
+    cewlcmd = "cewl"
+  end
+
   File.foreach(input) do |url|
     puts "Running CeWL against: #{url.chomp} (#{count}/#{lineCount})"
-    cewl = %x[ruby cewl/cewl.rb #{url}]
+
+    cewl = %x[#{cewlcmd} #{url}]
+
     if cewl.include? "Unable to connect to the site"
       puts "-- Unable to connect to the site"
       count = count + 1

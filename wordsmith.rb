@@ -206,6 +206,61 @@ def states(state)
   end
 end
 
+# state abbreviations, useful for printing concise output
+def stateAbbrv(state)
+  return "AL" if state == "Alabama"
+  return "AK" if state == "Alaska"
+  return "AZ" if state == "Arizona"
+  return "AR" if state == "Arkansas"
+  return "CA" if state == "California"
+  return "CO" if state == "Colorado"
+  return "CT" if state == "Connecticut"
+  return "DE" if state == "Delaware"
+  return "DC" if state == "District of Columbia"
+  return "FL" if state == "Florida"
+  return "GA" if state == "Georgia"
+  return "HI" if state == "Hawaii"
+  return "ID" if state == "Idaho"
+  return "IL" if state == "Illinois"
+  return "IN" if state == "Indiana"
+  return "IA" if state == "Iowa"
+  return "KS" if state == "Kansas"
+  return "KY" if state == "Kentucky"
+  return "LA" if state == "Louisiana"
+  return "ME" if state == "Maine"
+  return "MD" if state == "Maryland"
+  return "MA" if state == "Massachusetts"
+  return "MI" if state == "Michigan"
+  return "MN" if state == "Minnesota"
+  return "MS" if state == "Mississippi"
+  return "MO" if state == "Missouri"
+  return "MT" if state == "Montana"
+  return "NE" if state == "Nebraska"
+  return "NV" if state == "Nevada"
+  return "NH" if state == "New Hampshire"
+  return "NJ" if state == "New Jersey"
+  return "NM" if state == "New Mexico"
+  return "NY" if state == "New York"
+  return "NC" if state == "North Carolina"
+  return "ND" if state == "North Dakota"
+  return "OH" if state == "Ohio"
+  return "OK" if state == "Oklahoma"
+  return "OR" if state == "Oregon"
+  return "PA" if state == "Pennsylvania"
+  return "RI" if state == "Rhode Island"
+  return "SC" if state == "South Carolina"
+  return "SD" if state == "South Dakota"
+  return "TN" if state == "Tennessee"
+  return "TX" if state == "Texas"
+  return "UT" if state == "Utah"
+  return "VT" if state == "Vermont"
+  return "VA" if state == "Virginia"
+  return "WA" if state == "Washington"
+  return "WV" if state == "West Virginia"
+  return "WI" if state == "Wisconsin"
+  return "WY" if state == "Wyoming"  
+end
+
 # this method will check if a url is valid
 def urlChecker(url)
   begin
@@ -220,7 +275,7 @@ end
 # this method will replace any spaces in a state with %20 so that the URL is properly formatted
 def urlFormatter(stateSet)
   if stateSet.include? "\s"
-    @url=stateSet.gsub!(/\s/,'%20') # replace any spaces in the state with the URL equivilent
+    @url = stateSet.gsub(/\s/,'%20') # replace any spaces in the state with the URL equivilent
   else
     @url = stateSet # just return the original state
   end 
@@ -491,7 +546,7 @@ def sportsTeams(stateSet)
     end}
     
    if teamsArr.empty?
-     puts "Sorry, there are no sports teams in #{stateSet}"
+     puts "Sports teams in #{stateAbbrv(stateSet)}:  0"
    else
      @teamsArr = postProcessor(teamsArr)
      if $quiet != true
@@ -499,10 +554,9 @@ def sportsTeams(stateSet)
        puts ""
      end
      if stateSet.include?("%20")
-       stateSet = stateSet.gsub!(/%20/,' ')
-       puts "Total words for sports teams in #{stateSet} is: #{@teamsArr.length}"
+       puts "Sports teams in #{stateAbbrv(stateSet.gsub(/%20/,' '))}:  #{@teamsArr.length}"
      else
-       puts "Total words for sports teams in #{stateSet} is: #{@teamsArr.length}"
+       puts "Sports teams in #{stateAbbrv(stateSet)}:  #{@teamsArr.length}"
      end
    end
 end
@@ -511,14 +565,14 @@ end
 def cities(stateSet)
   state = urlFormatter(stateSet) #replace any spaces in a state with %20 so that the URL is properly formatted
 
-  if stateSet == "District%20of%20Columbia"
+  if state == "District%20of%20Columbia"
      cities = ["Washington"]
      @cities = postProcessor(cities)
      if $quiet != true
        puts @cities
        puts ""
      end
-     puts "Total words for cities and towns in District of Columbia is: #{@cities.length}"
+     puts "City names in DC:   #{@cities.length}"
   else
     url = "data/#{state}-cities.html"
     fileCheck(url)
@@ -540,12 +594,7 @@ def cities(stateSet)
       puts @cities
       puts ""
     end
-    if state.include?("%20")
-      state = state.gsub!(/%20/,' ')
-      puts "Total words for cities and towns in #{state} is: #{@cities.length}"
-    else
-      puts "Total words for cities and towns in #{state} is: #{@cities.length}"
-    end
+    puts "City names in #{stateAbbrv(stateSet)}:    #{@cities.length}"
   end
 end
 
@@ -556,7 +605,7 @@ def landmarks(stateSet)
   if stateSet == "District%20of%20Columbia" # DC needs special URL formatting
     url = "data/District%20of%20Columbia-landmarks.html"
   else
-     url = "data/#{state}-landmarks.html"
+    url = "data/#{state}-landmarks.html"
   end
   fileCheck(url)
   page = urlChecker(url)
@@ -574,10 +623,9 @@ def landmarks(stateSet)
     puts ""
   end
   if state.include?("%20")
-    state = state.gsub!(/%20/,' ')
-    puts "Total words for landmarks in #{state} is: #{@landmark.length}"
+    puts "Landmarks in #{stateAbbrv(stateSet.gsub(/%20/,' '))}:     #{@landmark.length}"
   else
-    puts "Total words for landmarks in #{state} is: #{@landmark.length}"
+    puts "Landmarks in #{stateAbbrv(stateSet)}:     #{@landmark.length}"
   end    
 end
 
@@ -599,26 +647,24 @@ def zip(stateSet)
     puts ""
   end
   if stateSet.include?("%20")
-    stateSet = stateSet.gsub!(/%20/,' ')
-    puts "Total zip codes in #{stateSet} is: #{@zip.length}"
+    puts "Zip codes in #{stateAbbrv(stateSet.gsub(/%20/,' '))}:     #{@zip.length}"
   else
-    puts "Total zip codes in #{stateSet} is: #{@zip.length}"
+    puts "Zip codes in #{stateAbbrv(stateSet)}:     #{@zip.length}"
   end
 end
 
 # this method will get all of the area codes for a state
 def areaCode(stateSet)
-  stateSet.gsub!('%20',' ')
   areaCodesFile = "data/usa-area-codes.csv"
   fileCheck(areaCodesFile)
-  stateLine = File.open(areaCodesFile).grep(/^#{stateSet}/).join(', ').split(',') # grep the state name in the area codes csv file and place into an array called line
+  stateLine = File.open(areaCodesFile).grep(/^#{stateSet.gsub('%20',' ')}/).join(', ').split(',') # grep the state name in the area codes csv file and place into an array called line
   stateLine.delete_at(0) # The first element contains the state name. Delete this.
   @areaCode = stateLine
   if $quiet != true
     puts @areaCode
     puts ""
   end
-  puts "Total area codes in #{stateSet} is: #{@areaCode.length}"
+  puts "Area codes in #{stateAbbrv(stateSet)}:    #{@areaCode.length}"
 end
 
 # this method will get all of the road names for a state
@@ -638,10 +684,9 @@ def roads(stateSet)
     puts ""
   end
   if stateSet.include?("%20")
-    stateSet = stateSet.gsub!(/%20/,' ')
-    puts "Total words for roads and streets in #{stateSet} is: #{@roads.length}"
+    puts "Road names in #{stateAbbrv(stateSet.gsub('%20',' '))}:    #{@roads.length}"
   else
-    puts "Total words for roads and streets in #{stateSet} is: #{@roads.length}"
+    puts "Road names in #{stateAbbrv(stateSet)}:    #{@roads.length}"
   end
 end
 
@@ -723,7 +768,7 @@ def names()
     puts @allNames
     puts ""
   end
-  puts "Total common names in the USA is: #{@allNames.length}"
+  puts "Common names in USA: #{@allNames.length}"
 end
 
 # Cross-platform way of finding an executable in the $PATH.
@@ -843,33 +888,57 @@ taking each line and splitting it on a space in to seperate words
 removing all special characters from a word
 =end
 def postProcessor(array)
-  
-  count = 0  
-  length = array.length
-  
-  wordsSplit = []
-  
-  until count == length
-    words = array[count].split()
-    wlength = words.length
-    wcount = 0
-    until wcount == wlength
-      wordsSplit.push words[wcount].split().to_s
-      wcount = wcount + 1
-    end  
-    count = count + 1
-  end
-  
-  specialCharRemoved = []
-  wordsSplit.each {|word| specialCharRemoved.push word.to_s.gsub!(/[^0-9A-Za-z]/, '')}
-  
+ 
+  #words to be manipulated
+  inputArray = []
+  array.each {|word| inputArray.push word.to_s} 
+
+  # array to store final output
   finalArr = [] 
-  
-  array.each {|word| finalArr.push word.to_s} 
-  wordsSplit.each {|word| finalArr.push word.to_s} 
-  specialCharRemoved.each {|word| finalArr.push word.to_s} 
-  
-  @finalArr = finalArr.sort!.uniq!  
+
+  # split words by spaces before manipulating
+  if $split
+    count = 0
+    length = array.length
+
+    until count == length
+      words = array[count].split()
+      wlength = words.length
+      wcount = 0
+      until wcount == wlength
+        inputArray.push words[wcount].to_s
+        wcount = wcount + 1
+      end
+      count = count + 1
+    end
+  end
+
+  # add pre-manipulated words
+  inputArray.each {|word| finalArr.push word.to_s} 
+
+  # add words with special characters removed
+  if $specials
+    inputArray.each {|word| finalArr.push word.to_s.gsub(/[^0-9A-Za-z]/, '')}
+  end
+
+  # add words with spaces removed
+  if $spaces
+    inputArray.each {|word| finalArr.push word.to_s.gsub(/[ ]/, '')}
+  end
+
+  # remove words with less than $length characters
+  if $length.nil? == false
+    finalArr.delete_if {|word| word.length < $length} 
+  end
+
+  if $lower
+    finalArr.map!(&:downcase)
+  end
+
+  # sort and uniq
+  @finalArr = finalArr.sort.uniq  
+
+  return @finalArr
 end
 
 # all states
@@ -881,36 +950,35 @@ def allStates()
   count = 0
   
   statesArr.each {|state|
-    stateSet = state.to_s
 
-    puts "--#{stateSet}--"
+    puts "--#{state}--"
     
-    sportsTeams(stateSet)
+    sportsTeams(state)
     if @teamsArr.nil? == false
       @teamsArr.each {|line| allArr.push line.to_s}
     end
 
-    cities(stateSet)
+    cities(state)
     if @cities.nil? == false
       @cities.each {|line| allArr.push line.to_s}
     end
     
-    landmarks(stateSet)
+    landmarks(state)
     if @landmark.nil? == false
       @landmark.each {|line| allArr.push line.to_s}
     end
     
-    areaCode(stateSet)
+    areaCode(state)
     if @areaCode.nil? == false
       @areaCode.each {|line| allArr.push line.to_s}
     end
     
-    zip(stateSet)
+    zip(state)
     if @zip.nil? == false
       @zip.each {|line| allArr.push line}
     end
 
-    roads(stateSet)
+    roads(state)
     if @roads.nil? == false
       @roads.each {|line| allArr.push line.to_s}
     end
@@ -975,19 +1043,23 @@ def output(file)
 
   outputArr.sort!.uniq!
   outputArr = outputArr.reject {|el| el.empty?}
-    
+
+  count = 0
+ 
   if @allArrCount == 51
     File.open(file,"w" ) do |f|  
       @allArr.each {|line| f.puts(line)}     
+      count = @allArr.length
     end 
   else
     File.open(file,"w" ) do |f|
       outputArr.each {|line| f.puts(line)}
+      count = outputArr.length
     end
   end
 
   puts ""
-  puts blue("Output written to: #{Dir.pwd}/#{file}")
+  puts blue("#{count} words written to: #{Dir.pwd}/#{file}")
 end
 
 # CLI Arguments
@@ -995,6 +1067,7 @@ def cli()
   options = OpenStruct.new
   ARGV << '-h' if ARGV.empty?
   OptionParser.new do |opt|
+    #bghv
     opt.banner = "Usage: ruby wordsmith.rb [options]"
     opt.on('Main Arguments:')
     opt.on('-s', '--state STATE', 'The US state set for the program') { |o| options.state = o }
@@ -1009,10 +1082,17 @@ def cli()
     opt.on('Miscellaneous Options:')
     opt.on('-d', '--domain DOMAIN', 'Set a URL for a web application that you want CeWL to scrape') { |o| options.url = o }
     opt.on('-e', '--examples', 'Show some usage examples') { |o| options.examples = o }
-    opt.on('-i', '--infile FILE', 'Supply a file containing multiple URLs for web applications that you want CeWL to scrape') { |o| options.multi = o }
+    opt.on('-i', '--infile FILE', 'Supply a file containing multiple URLs that you want CeWL to scrape') { |o| options.multi = o }
     opt.on('-n', '--names', 'Grab the most common male, female, baby and last names in the USA') { |o| options.names = o }
+    opt.on('Output Options:')
     opt.on('-o', '--output FILE', 'The name of the output file') { |o| options.out = o }
     opt.on('-q', '--quiet', 'Don\'t show words generated, use with -o option') { |o| options.quiet = o }
+    opt.on('-k', '--length LEN', Integer, 'Minumum length of word to include') { |o| options.length = o }
+    opt.on('-j', '--lowercase', 'Convert all words to lowercase') { |o| options.lower = o }
+    opt.on('-w', '--specials', 'Add words with special characters removed') { |o| options.specials = o }
+    opt.on('-x', '--spaces', 'Add words with spaces removed') { |o| options.spaces = o }
+    opt.on('-y', '--split', 'Split words by space and add') { |o| options.split = o }
+    opt.on('-m', '--mangle', 'Add all permutations (-w, -x, -y)') { |o| options.mangle = o }
     opt.on('Management:')
     opt.on('-u', '--update', 'Update the program') { |o| options.update = o }
     opt.on('-f', '--force', 'Forcefully update the program') { |o| options.fupdate = o }
@@ -1023,6 +1103,9 @@ def cli()
   cities = options.cities
   examples = options.examples
   landmarks = options.landmarks
+  $length = options.length
+  $lower = options.lower
+  $mangle = options.mangle
   multiUrl = options.multi
   names = options.names
   outputFile = options.out
@@ -1030,20 +1113,32 @@ def cli()
   $quiet = options.quiet
   roads = options.roads
   sports = options.sports
+  $spaces = options.spaces
+  $specials = options.specials
+  $split = options.split
   url = options.url
   update = options.update
   updateForce = options.fupdate
   zip = options.zip
+
+  # turn on all manipulation switches for mangle
+  if $mangle == true
+    $spaces = true
+    $split = true
+    $specials = true
+  end
   
   # these options do need a state to be set in order to run
   if stateSet.nil? == false then state = states(options.state) end
-  if stateSet.nil? == false && all == true then all(state) end
-  if stateSet.nil? == false && cities == true then cities(state) end
-  if stateSet.nil? == false && landmarks == true then landmarks(state) end  
-  if stateSet.nil? == false && phone == true then areaCode(state) end  
-  if stateSet.nil? == false && roads == true then roads(state) end    
-  if stateSet.nil? == false && sports == true then sportsTeams(state) end   
-  if stateSet.nil? == false && zip == true then zip(state) end
+  if stateSet.to_s.upcase != "ALL"
+    if stateSet.nil? == false && all == true then all(state) end
+    if stateSet.nil? == false && cities == true then cities(state) end
+    if stateSet.nil? == false && landmarks == true then landmarks(state) end  
+    if stateSet.nil? == false && phone == true then areaCode(state) end  
+    if stateSet.nil? == false && roads == true then roads(state) end    
+    if stateSet.nil? == false && sports == true then sportsTeams(state) end   
+    if stateSet.nil? == false && zip == true then zip(state) end
+  end
     
   # these options do not need a state to be set in order to run
   if examples == true then examples() end  

@@ -201,7 +201,7 @@ def states(state)
     @state = "Wyoming"
   else
     puts ""
-  	puts red("#{input} is an invalid state please type the state name or abbrevation. For example \"California\" or \"CA\".")
+    puts red("#{input} is an invalid state. Please type the state name or abbrevation. For example \"California\" or \"CA\".")
     abort
   end
 end
@@ -275,16 +275,19 @@ end
 # this method will replace any spaces in a state with %20 so that the URL is properly formatted
 def urlFormatter(stateSet)
   if stateSet.include? "\s"
-    @url = stateSet.gsub(/\s/,'%20') # replace any spaces in the state with the URL equivilent
+    # replace any spaces in the state with the URL equivilent
+    @url = stateSet.gsub(/\s/,'%20')
   else
-    @url = stateSet # just return the original state
+    # just return the original state
+    @url = stateSet
   end 
 end
 
 # this method will pull all data required for this program and store to HTML. 
 def pull()
   
-  files = ["data/sports.html", "data/Connecticut-landmarks.html", "data/Connecticut-cities.html", "data/babynames-17.html", "data/Connecticut-zip.html"] # random selection of files
+  # random selection of files
+  files = ["data/sports.html", "data/Connecticut-landmarks.html", "data/Connecticut-cities.html", "data/babynames-17.html", "data/Connecticut-zip.html"]
       
   if File.exist?(files[0]) == true
     puts "File for sports teams in the USA exists already." 
@@ -320,8 +323,8 @@ def fileCheck(file)
   if File.exist?(files) == false
     puts " "
     puts "Whoops!"
-    puts "The file named #{files} does not exist amd wordsmith needs that to process this request."
-    puts "Please update the program using the force update function or run setup.sh to unpack data.tar.gz" 
+    puts "The file named #{files} does not exist and wordsmith needs that to process this request."
+    puts "Please update the program using the force update function or unpack data.tar.gz" 
     puts red("EXITING!")
     abort
   end
@@ -330,7 +333,7 @@ end
 # this method will forcefully pull all data required for and store to HTML. 
 def fpull()
   %x[mkdir data/]
-  puts blue("Downloading 100MB of data. Please be patient.")
+  puts blue("Downloading ~100MB of data. Please be patient.")
   puts ""
   pullSports()
   pullCitiesTownsLandcapesDC() 
@@ -346,13 +349,14 @@ end
 def pullSports()
   url  = "https://en.wikipedia.org/wiki/Major_professional_sports_teams_of_the_United_States_and_Canada"
   page = urlChecker(url)
-  sportsTeams = "data/sports.html" 
+  sportsTeams = "data/sports/sports.html" 
   puts "Grabbing USA sports teams for all states and storing to disk"
   output = File.open(sportsTeams,"w") 
-  output.write page # store the url above into a file named data/sports.html
+  # store the url above into a file named data/sports/sports.html
+  output.write page
   output.close
   
-  puts "Success, files stored in #{Dir.pwd}/data/"
+  puts "Success, files stored in #{Dir.pwd}/data/sports/"
   puts ""
 end
 
@@ -363,7 +367,9 @@ def pullCitiesTownsLandcapesDC()
   landmark = urlChecker(landmarkUrl)
   
   output = File.open("data/#{state}-landmarks.html","w")
-  output.write landmark # cycle through array, for each state, grab the wikipedia entry in the cities url set above and store the HTML file to disk
+  # cycle through array, for each state, grab the wikipedia entry in the cities
+  # url set above and store the HTML file to disk
+  output.write landmark
   output.close 
 end
 
@@ -377,26 +383,34 @@ def pullCitiesTownsLandcapes()
   
   until count == statesArrLength
     stateSet = statesArr[count]
-    state = urlFormatter(stateSet) #replace any spaces in a state with %20 so that the URL is properly formatted
+    # replace any spaces in a state with %20 so that the URL is properly formatted
+    state = urlFormatter(stateSet)
     
-    if stateSet == "Georgia" # GA needs special URL formatting to distinguish the state from the country
+    # GA needs special URL formatting to distinguish the state from the country
+    if stateSet == "Georgia"
       citiesUrl = "https://en.wikipedia.org/wiki/List_of_municipalities_in_Georgia_(U.S._state)"
     else
-      citiesUrl  = "https://en.wikipedia.org/wiki/List_of_cities_in_#{state}" # URL set to state
+      # URL set to state
+      citiesUrl  = "https://en.wikipedia.org/wiki/List_of_cities_in_#{state}"
     end
         
     cities = urlChecker(citiesUrl)
     
-    landmarkUrl = "https://en.wikipedia.org/wiki/List_of_National_Historic_Landmarks_in_#{state}" # URL set to state
+    # URL set to state
+    landmarkUrl = "https://en.wikipedia.org/wiki/List_of_National_Historic_Landmarks_in_#{state}"
     
     landmark = urlChecker(landmarkUrl)
     
     output = File.open("data/#{state}-cities.html","w")
-    output.write cities # cycle through array, for each state, grab the wikipedia entry in the cities url set above and store the HTML file to disk
+    # cycle through array, for each state, grab the wikipedia entry in the
+    # cities url set above and store the HTML file to disk
+    output.write cities
     output.close  
     
     output = File.open("data/#{state}-landmarks.html","w")
-    output.write landmark # cycle through array, for each state, grab the wikipedia entry in the landmark url set above and store the HTML file to disk
+    # cycle through array, for each state, grab the wikipedia entry in the
+    # landmark url set above and store the HTML file to disk
+    output.write landmark
     output.close 
     
     count = count + 1
@@ -438,8 +452,9 @@ def pullNames()
   
    namesUrl.each{ |url| 
      page = urlChecker(url)
-     output = File.open("data/names-#{count}.html","w")
-     output.write page # cycle through array, for each namesUrl, grab and store the HTML file to disk
+     output = File.open("data/names/names-#{count}.html","w")
+     # cycle through array, for each namesUrl, grab and store the HTML file to disk
+     output.write page
      output.close 
      count = count + 1
      print "%.2f" % (count/final * 100)
@@ -448,15 +463,16 @@ def pullNames()
    
    babyNamesUrl.each{ |url| 
      page = urlChecker(url)
-     output = File.open("data/babynames-#{count}.html","w")
-     output.write page # cycle through array, for each namesUrl, grab and store the HTML file to disk
+     output = File.open("data/names/babynames-#{count}.html","w")
+     # cycle through array, for each namesUrl, grab and store the HTML file to disk
+     output.write page
      output.close 
      count = count + 1
      print "%.2f" % (count/final * 100)
      print "% "
    }
    puts ""
-   puts "Success, files stored in #{Dir.pwd}/data/"
+   puts "Success, files stored in #{Dir.pwd}/data/names/"
    puts ""
 end
 
@@ -472,13 +488,16 @@ def pullZip()
   until count == statesArrLength
     stateSet = statesArr[count]
     
-    state = urlFormatter(stateSet) #replace any spaces in a state with %20 so that the URL is properly formatted
-    url = "http://www.zipcodestogo.com/#{state}/" # set the state in the specified URL
+    # replace any spaces in a state with %20 so that the URL is properly formatted
+    state = urlFormatter(stateSet)
+    # set the state in the specified URL
+    url = "http://www.zipcodestogo.com/#{state}/"
     
     zip = urlChecker(url)
     
     output = File.open("data/#{state}-zip.html","w")
-    output.write zip # cycle through array, for each state and store the HTML file containing zip codes to disk
+    # cycle through array, for each state and store the HTML file containing zip codes to disk
+    output.write zip
     output.close  
     
     count = count + 1
@@ -515,26 +534,32 @@ def pullRoads()
   %x[tar -xf roads.tar.gz]
   %x[rm roads.tar.gz]  
   
-  puts "Success, file stored in #{Dir.pwd}/roads/"
+  puts "Success, file stored in #{Dir.pwd}/data/"
   puts ""
 end
 
 # this method will get all of the sports teams for a given state
 def sportsTeams(stateSet)
-  url  = "data/sports.html"
+  url  = "data/sports/sports.html"
   fileCheck(url)
   page = urlChecker(url)
-  tdLength = page.css('td').length.to_i # get a count of the table data attributs on the page
+  # get a count of the table data attributs on the page
+  tdLength = page.css('td').length.to_i
   
-  team = 0 # 0 represents the first table row which is the sports team name 
-  state = 2 # 2 represents the third table row which is the state of the corresponding sports team 
+  # 0 represents the first table row which is the sports team name 
+  team = 0
+  # 2 represents the third table row which is the state of the corresponding sports team 
+  state = 2
   teamsHash = Hash.new()
   
   until team == tdLength
-    key = page.css('td')[team].text # key is the sports team name as this is unique
-    value = page.css('td')[state].text # value is the state of the sports team
+    # key is the sports team name as this is unique
+    key = page.css('td')[team].text
+    # value is the state of the sports team
+    value = page.css('td')[state].text
     teamsHash[key.to_s] = value.to_s 
-    team = team + 7 # plus 7 to go back to the first element in the table, which is the name of the sports team
+    # plus 7 to go back to the first element in the table, which is the name of the sports team
+    team = team + 7
     state = state + 7 # plus 7 to go back to the thrid element in the table, which is the state of the corresponding sports team 
   end
   
@@ -542,7 +567,8 @@ def sportsTeams(stateSet)
   
   teamsHash.select{ |team, state|
     if state == stateSet 
-      teamsArr.push team.to_s # add all of the sports teams for a specific state into an array
+      # add all of the sports teams for a specific state into an array
+      teamsArr.push team.to_s
     end}
     
    if teamsArr.empty?
@@ -563,7 +589,8 @@ end
 
 # this method will get all of the cities and towns for a given state.
 def cities(stateSet)
-  state = urlFormatter(stateSet) #replace any spaces in a state with %20 so that the URL is properly formatted
+  # replace any spaces in a state with %20 so that the URL is properly formatted
+  state = urlFormatter(stateSet)
 
   if state == "District%20of%20Columbia"
      cities = ["Washington"]
@@ -572,23 +599,34 @@ def cities(stateSet)
        puts @cities
        puts ""
      end
-     puts "City names in DC:   #{@cities.length}"
+     puts "City names in DC:    #{@cities.length}"
   else
-    url = "data/#{state}-cities.html"
+    url = "data/#{state}/cities.html"
     fileCheck(url)
     page = urlChecker(url)
     
-    row = page.css('table.wikitable tr') # look for all table rows in the supplied URL as entries for cities and towns are likely to be in a table
-    cities = row.css('a').map {|city| city.text} # filter down to all table rows containing a hyperlink, as cities and towns are likley to be wrapped in "a href"
-    cities = cities.sort.uniq.delete_if {|city| city.include?("]") } # sort and delete duplicates, then delete any line that contains brackets 
-    cities = cities.delete_if {|city| city.include?("http") } # delete any line that contains that has http  
-    cities = cities.delete_if {|city| city.include?(";") } # delete any line that contains that has a ; - typically coordinates
-    cities = cities.delete_if {|city| city.match(/\d\d/) } # delete any line that has at least 2 consequtive numbers (year or neighbourhoods in city)
-    cities = cities.delete_if {|city| city[0].match(/^[a-z]/)} # delete any line where the first character of a string starts with a lower case letter
-    cities = cities.each {|city| city.gsub!(/\([^()]*\)/,'')} # delete anything within parenthesis and the parenthesis themselves
-    cities = cities.each {|city| city.gsub!(/†/,'')} # replace the † character - typically used for references on wikipedia
-    cities = cities.each {|city| city.gsub!(/\s+$/,'')} # remove all trailing spaces from a string
-    cities = cities.sort.uniq # perform another sort and uniq
+    # look for all table rows in the supplied URL as entries for cities and towns are likely to be in a table
+    row = page.css('table.wikitable tr')
+    # filter down to all table rows containing a hyperlink, as cities and towns are likley to be wrapped in "a href"
+    cities = row.css('a').map {|city| city.text}
+    # sort and delete duplicates, then delete any line that contains brackets 
+    cities = cities.sort.uniq.delete_if {|city| city.include?("]") }
+    # delete any line that contains that has http  
+    cities = cities.delete_if {|city| city.include?("http") }
+    # delete any line that contains that has a ; - typically coordinates
+    cities = cities.delete_if {|city| city.include?(";") }
+    # delete any line that has at least 2 consequtive numbers (year or neighbourhoods in city)
+    cities = cities.delete_if {|city| city.match(/\d\d/) }
+    # delete any line where the first character of a string starts with a lower case letter
+    cities = cities.delete_if {|city| city[0].match(/^[a-z]/)}
+    # delete anything within parenthesis and the parenthesis themselves
+    cities = cities.each {|city| city.gsub!(/\([^()]*\)/,'')}
+    # replace the † character - typically used for references on wikipedia
+    cities = cities.each {|city| city.gsub!(/†/,'')}
+    # remove all trailing spaces from a string
+    cities = cities.each {|city| city.gsub!(/\s+$/,'')}
+    # perform another sort and uniq
+    cities = cities.sort.uniq
     @cities = postProcessor(cities)
     if $quiet != true
       puts @cities
@@ -601,19 +639,22 @@ end
 # this method will get all of the landmarks for a state
 def landmarks(stateSet)
   
-  state = urlFormatter(stateSet) #replace any spaces in a state with %20 so that the URL is properly formatted
-  if stateSet == "District%20of%20Columbia" # DC needs special URL formatting
-    url = "data/District%20of%20Columbia-landmarks.html"
-  else
-    url = "data/#{state}-landmarks.html"
-  end
+  # replace any spaces in a state with %20 so that the URL is properly formatted
+  state = urlFormatter(stateSet)
+
+  url = "data/#{state}/landmarks.html"
   fileCheck(url)
   page = urlChecker(url)
-  row = page.css('table.wikitable tr') # look for all table rows in the supplied URL as entries for landmarks are likely to be in a table
-  landmark = row.xpath('./td[1]').map {|lm| lm.text} # grab the first td from each tr. this is likely going to contain a landmark
-  landmark = landmark.each {|lm| lm.gsub!(/\([^()]*\)/,'')} # delete anything within parenthesis and the parenthesis themselves
-  landmark = landmark.each {|lm| lm.gsub!(/\[[^\[\]]*\]/,'')} # delete anything within brackets and the brackets themselves
-  landmark = landmark.each {|lm| lm.gsub!(/\s+$/,'')} # remove all trailing spaces from a string
+  # look for all table rows in the supplied URL as entries for landmarks are likely to be in a table
+  row = page.css('table.wikitable tr')
+  # grab the first td from each tr. this is likely going to contain a landmark
+  landmark = row.xpath('./td[1]').map {|lm| lm.text}
+  # delete anything within parenthesis and the parenthesis themselves
+  landmark = landmark.each {|lm| lm.gsub!(/\([^()]*\)/,'')}
+  # delete anything within brackets and the brackets themselves
+  landmark = landmark.each {|lm| lm.gsub!(/\[[^\[\]]*\]/,'')}
+  # remove all trailing spaces from a string
+  landmark = landmark.each {|lm| lm.gsub!(/\s+$/,'')}
   landmark = landmark.sort.uniq
   badChars = ["1","2","1*","2*","3#","3","4","5","Legend","Site\stype","",nil]
   temp = landmark - badChars    
@@ -632,15 +673,21 @@ end
 # this method will get all of the zip codes for a state
 def zip(stateSet)
   state = urlFormatter(stateSet)
-  url = "data/#{state}-zip.html"
+  url = "data/#{state}/zip.html"
   fileCheck(url)
   page = urlChecker(url)
-  div = page.css('div#leftCol') # focus on the left div column
-  table = div.css('table.inner_table') # focus on the inner table
-  row = table.css('tr') # grab all the table rows from the inner table
-  zip = row.css('td[1]').map {|n| n.text} # grab the first table data element from each table row
-  zip.delete_at(0) # delete text that contains "zip codes for the state of x"
-  zip.delete_at(0) # delete text that contains "zip codes"
+  # focus on the left div column
+  div = page.css('div#leftCol')
+  # focus on the inner table
+  table = div.css('table.inner_table')
+  # grab all the table rows from the inner table
+  row = table.css('tr')
+  # grab the first table data element from each table row
+  zip = row.css('td[1]').map {|n| n.text}
+  # delete text that contains "zip codes for the state of x"
+  zip.delete_at(0)
+  # delete text that contains "zip codes"
+  zip.delete_at(0)
   @zip = zip  
   if $quiet != true
     puts @zip
@@ -655,10 +702,12 @@ end
 
 # this method will get all of the area codes for a state
 def areaCode(stateSet)
-  areaCodesFile = "data/usa-area-codes.csv"
+  areaCodesFile = "data/area/usa-area-codes.csv"
   fileCheck(areaCodesFile)
-  stateLine = File.open(areaCodesFile).grep(/^#{stateSet.gsub('%20',' ')}/).join(', ').split(',') # grep the state name in the area codes csv file and place into an array called line
-  stateLine.delete_at(0) # The first element contains the state name. Delete this.
+  # grep the state name in the area codes csv file and place into an array called line
+  stateLine = File.open(areaCodesFile).grep(/^#{stateSet.gsub('%20',' ')}/).join(', ').split(',')
+  # The first element contains the state name. Delete this.
+  stateLine.delete_at(0)
   @areaCode = stateLine
   if $quiet != true
     puts @areaCode
@@ -669,8 +718,9 @@ end
 
 # this method will get all of the road names for a state
 def roads(stateSet)
-  state = urlFormatter(stateSet) #replace any spaces in a state with %20 so that the URL is properly formatted
-  filename = "roads/#{state}-roads.txt"
+  # replace any spaces in a state with %20 so that the URL is properly formatted
+  state = urlFormatter(stateSet)
+  filename = "data/#{state}/roads.txt"
   fileCheck(filename)
   file = File.open(filename, "rb")
   contents = file.read
@@ -712,49 +762,57 @@ this method will get 1) 12k most common surnames in USA. 2) 1.2k common male nam
 =end 
 def names()
 
-  namesUrl = ["data/names-0.html",
-    "data/names-1.html",
-    "data/names-2.html",
-    "data/names-3.html",
-    "data/names-4.html",
-    "data/names-5.html",
-    "data/names-6.html",
-    "data/names-7.html",
-    "data/names-8.html",
-    "data/names-9.html",
-    "data/names-10.html"]
+  namesUrl = ["data/names/names-0.html",
+    "data/names/names-1.html",
+    "data/names/names-2.html",
+    "data/names/names-3.html",
+    "data/names/names-4.html",
+    "data/names/names-5.html",
+    "data/names/names-6.html",
+    "data/names/names-7.html",
+    "data/names/names-8.html",
+    "data/names/names-9.html",
+    "data/names/names-10.html"]
   
   names = []
   
   count = 0
   final = 19.0
   
-  namesUrl.each{ |url| # iterate through each last name URL
+  # iterate through each last name URL
+  namesUrl.each{ |url|
     fileCheck(url)
     page = urlChecker(url)
-    row = page.css('tr') # look for all table rows in the supplied URL
-    currentName = row.xpath('./td[1]').map {|n| n.text} # grab the first td
-    names = names + currentName # add into lastname array
+    # look for all table rows in the supplied URL
+    row = page.css('tr')
+    # grab the first td
+    currentName = row.xpath('./td[1]').map {|n| n.text}
+    # add into lastname array
+    names = names + currentName
     count = count + 1
   }
   
-  babyNamesUrl = ["data/babynames-11.html",
-    "data/babynames-12.html",
-    "data/babynames-13.html",
-    "data/babynames-14.html",
-    "data/babynames-15.html",
-    "data/babynames-16.html",
-    "data/babynames-17.html",
-    "data/babynames-18.html"]
+  babyNamesUrl = ["data/names/babynames-11.html",
+    "data/names/babynames-12.html",
+    "data/names/babynames-13.html",
+    "data/names/babynames-14.html",
+    "data/names/babynames-15.html",
+    "data/names/babynames-16.html",
+    "data/names/babynames-17.html",
+    "data/names/babynames-18.html"]
 
   babyNames = []
     
-  babyNamesUrl.each{ |url| # iterate through each last name URL
+  # iterate through each last name URL
+  babyNamesUrl.each{ |url|
     fileCheck(url)
     page = urlChecker(url)
-    row = page.css('tr') # look for all table rows in the supplied URL
-    currentName = row.xpath('./td[2]').map {|n| n.text} # grab the first td
-    babyNames = babyNames + currentName # add into lastname array
+    # look for all table rows in the supplied URL
+    row = page.css('tr')
+    # grab the first td
+    currentName = row.xpath('./td[2]').map {|n| n.text}
+    # add into lastname array
+    babyNames = babyNames + currentName
     count = count + 1
   }
   
@@ -785,12 +843,18 @@ end
 
 # run CeWL against the specified URL
 def scrapeSingle(url)
-  if which("cewl").nil?
-    cewl = %x[ruby cewl/cewl.rb #{url}]
-  else
-    cewl = %x[cewl #{url}]
+
+  # check for CeWL executable
+  cewlpath = which("cewl")
+  if cewlpath.nil?
+    puts red("cewl executable not found in path! Skipping URL.")
+    puts red("See README for CeWL installation instructions.")
+    return
   end
+
   puts "Running CeWL against: #{url}"
+  cewl = %x[#{cewlpath} #{url}]
+
   # convert to array, remove first two entries (CeWL banner and blank line)
   # sort and uniq
   result = cewl.split("\n").drop(2).sort.uniq
@@ -818,16 +882,18 @@ def scrapeMultiple(infile)
   count = 1
   lineCount = File.foreach(input).count
 
-  if which("cewl").nil?
-    cewlcmd = "ruby cewl/cewl.rb"
-  else
-    cewlcmd = "cewl"
+  # check for CeWL executable
+  cewlpath = which("cewl")
+  if cewlpath.nil?
+    puts red("cewl executable not found in path! Skipping URLs.")
+    puts red("See README for CeWL installation instructions.")
+    return 
   end
 
   File.foreach(input) do |url|
     puts "Running CeWL against: #{url.chomp} (#{count}/#{lineCount})"
 
-    cewl = %x[#{cewlcmd} #{url}]
+    cewl = %x[#{cewlpath} #{url}]
 
     if cewl.include? "Unable to connect to the site"
       puts "-- Unable to connect to the site"
@@ -871,12 +937,20 @@ end
 def examples()
   puts "Grab all of the cities and towns for California"
   puts "    ruby wordsmith.rb -s CA -c"
-  puts "\nGrab everything for California, write to file named california.txt"
-  puts "    ruby wordsmith.rb -s CA -a -o california.txt"
-  puts "\nGrab everything for California and run CeWL against https://www.popped.io"
-  puts "    ruby wordsmith.rb -s CA -a -d https://www.popped.io"
-  puts "\nCreate a mega wordlist containing all states with all options, quiet output"
-  puts "    ruby wordsmith.rb -s all -q -o wordsmith-all.txt"
+  puts "\nGrab all sports teams for California, mangle the output"
+  puts "    ruby wordsmith.rb -s CA -t -m"
+  puts "\nGrab all road names for California, mangle the output, convert to lowercase"
+  puts "    ruby wordsmith.rb -s CA -r -m -j"
+  puts "\nGrab all landmarks for California with a minimum character length of 8"
+  puts "    ruby wordsmith.rb -s CA -l -k 8"
+  puts "\nGrab everything for California, write to file named CA.txt"
+  puts "    ruby wordsmith.rb -s CA -a -o CA.txt"
+  puts "\nCreate a mega wordlist containing all states with all options, quiet output, write to file named all.txt"
+  puts "    ruby wordsmith.rb -s all -m -q -o all.txt"
+  puts "\nRun CeWL against https://www.popped.io, mangle the output"
+  puts "    ruby wordsmith.rb -d https://www.popped.io -m"
+  puts "\nRun CeWL against list of URLs contained in urls.txt, write to file out.txt"
+  puts "    ruby wordsmith.rb -i urls.txt -m -o out.txt"
   puts "\nGrab the most common male, female, baby and last names in the USA"
   puts "    ruby wordsmith.rb -n"
 end
@@ -1156,11 +1230,10 @@ If the user double clicks on data.tar.gz then all foders will be listed within d
 Folders need to be listed independantly, like cewl/ data/ and roads/
 =end
 def firstRun()
-  cewlCheck = "./cewl/cewl.rb"
-  roadCheck = "./data/Arizona-cities.html"
-  dataCheck = "./roads/Arizona-roads.txt"
+  roadCheck = "./data/Arizona/roads.txt"
+  dataCheck = "./data/Arizona/cities.html"
     
-  if File.exist?(cewlCheck) == false ||  File.exist?(roadCheck) == false || File.exist?(dataCheck) == false
+  if File.exist?(roadCheck) == false || File.exist?(dataCheck) == false
     archiveCheck = "data.tar.gz"
     if File.exist?(archiveCheck) == false
       puts red("data.tar.gz not detected! Please run wordsmith with the force update option.")
@@ -1168,12 +1241,17 @@ def firstRun()
     else
       puts blue("Hello new wordsmither! Just need to unpack some files.")
       %x[rm -rf data/]
-      %x[rm -rf roads/]
-      %x[rm -rf cewl/]
       %x[tar -xf data.tar.gz]
-      puts ""
       puts blue("Unpack completed!")
-      puts ""
+      cewlpath = which("cewl")
+      if cewlpath.nil?
+        puts blue("CeWL not found in path. Install CeWL and put in path to use -d or -i options.")
+        puts ""
+      else
+        puts blue("CeWL found: #{cewlpath}")
+        puts ""
+      end
+
     end
   end
 end

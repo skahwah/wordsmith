@@ -25,6 +25,12 @@ def red(text)
   colorize(text, 31)
 end
 
+# This method changes text color to orange
+def orange(text)
+  colorize(text, 33)
+end
+
+
 # This method changes text color to blue
 def blue(text)
 	colorize(text, 34)
@@ -1245,9 +1251,11 @@ def firstRun()
       puts blue("Unpack completed!")
       cewlpath = which("cewl")
       if cewlpath.nil?
-        puts blue("CeWL not found in path. Install CeWL and put in path to use -d or -i options.")
+        puts ""
+        puts orange("WARNING: CeWL not found in path. Install CeWL and put in path to use -d or -i options.")
         puts ""
       else
+        puts ""
         puts blue("CeWL found: #{cewlpath}")
         puts ""
       end

@@ -30,7 +30,6 @@ def orange(text)
   colorize(text, 33)
 end
 
-
 # This method changes text color to blue
 def blue(text)
 	colorize(text, 34)
@@ -289,39 +288,6 @@ def urlFormatter(stateSet)
   end 
 end
 
-# this method will pull all data required for this program and store to HTML. 
-def pull()
-  
-  # random selection of files
-  files = ["data/sports.html", "data/Connecticut-landmarks.html", "data/Connecticut-cities.html", "data/babynames-17.html", "data/Connecticut-zip.html"]
-      
-  if File.exist?(files[0]) == true
-    puts "File for sports teams in the USA exists already." 
-  else
-    pullSports()
-  end
-    
-  if File.exist?(files[1]) == true && File.exist?(files[2]) == true
-    puts "Files for cities, towns and landmarks exists already."
-  else
-    pullCitiesTownsLandcapes()
-  end
-      
-  if File.exist?(files[3]) == true
-    puts "Files for common first name, last names and baby names exists already."
-  else
-    pullNames()
-  end
-  
-  if File.exist?(files[4]) == true
-    puts "Files for zip codes exists already."
-  else
-    pullZip()
-  end
-  puts ""
-  puts blue("To ignore and download again, type fpull")
-end
-
 # this method will check to see if the file exists before it is processed. 
 def fileCheck(file)
   files = file
@@ -337,18 +303,16 @@ def fileCheck(file)
 end
 
 # this method will forcefully pull all data required for and store to HTML. 
-def fpull()
-  %x[mkdir data/]
+def pull()
+  if not Dir.exists?('data') then Dir.mkdir('data') end
   puts blue("Downloading ~100MB of data. Please be patient.")
   puts ""
-  pullSports()
-  pullCitiesTownsLandcapesDC() 
-  pullCitiesTownsLandcapes()
-  pullRoads()
-  pullNames()
-  pullZip()
   pullAreaCodes()
-  pullCewl()
+  pullCities()
+  pullNames()
+  pullRoads()
+  pullSports()
+  pullZip()
 end
 
 # this method will pull all data required for sports teams per state and store to HTML. 
@@ -362,63 +326,65 @@ def pullSports()
   output.write page
   output.close
   
-  puts "Success, files stored in #{Dir.pwd}/data/sports/"
+  puts "Success, files stored in #{Dir.pwd}/data/"
   puts ""
 end
 
-def pullCitiesTownsLandcapesDC() 
-  state = "District%20of%20Columbia"
-  
-  landmarkUrl = "https://en.wikipedia.org/wiki/List_of_National_Historic_Landmarks_in_Washington,_D.C."
-  landmark = urlChecker(landmarkUrl)
-  
-  output = File.open("data/#{state}-landmarks.html","w")
-  # cycle through array, for each state, grab the wikipedia entry in the cities
-  # url set above and store the HTML file to disk
-  output.write landmark
-  output.close 
-end
+# this method will pull all data required for cities and landmarks per state and store to HTML. 
+def pullCities()
 
-# this method will pull all data required for cities, towns and landscapes per state and store to HTML. 
-def pullCitiesTownsLandcapes()
-  statesArr = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
+  statesArr = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "District of Columbia", "West Virginia", "Wisconsin", "Wyoming"]
   statesArrLength = statesArr.length.to_i
   count = 0
   
-  puts "Grabbing Cities, Townships and Landmarks for all States and storing to disk"
+  puts "Grabbing Cities, Landmarks, and College Sports for all states and storing to disk"
   
   until count == statesArrLength
     stateSet = statesArr[count]
     # replace any spaces in a state with %20 so that the URL is properly formatted
     state = urlFormatter(stateSet)
     
+    # cities
     # GA needs special URL formatting to distinguish the state from the country
     if stateSet == "Georgia"
       citiesUrl = "https://en.wikipedia.org/wiki/List_of_municipalities_in_Georgia_(U.S._state)"
+    elsif stateSet == "District of Columbia"
+      citiesUrl  = "https://en.wikipedia.org/wiki/Neighborhoods_in_Washington,_D.C."
     else
-      # URL set to state
       citiesUrl  = "https://en.wikipedia.org/wiki/List_of_cities_in_#{state}"
     end
-        
     cities = urlChecker(citiesUrl)
-    
-    # URL set to state
-    landmarkUrl = "https://en.wikipedia.org/wiki/List_of_National_Historic_Landmarks_in_#{state}"
-    
-    landmark = urlChecker(landmarkUrl)
-    
-    output = File.open("data/#{state}-cities.html","w")
-    # cycle through array, for each state, grab the wikipedia entry in the
-    # cities url set above and store the HTML file to disk
+    output = File.open("data/#{state}/cities.html","w")
     output.write cities
     output.close  
-    
-    output = File.open("data/#{state}-landmarks.html","w")
-    # cycle through array, for each state, grab the wikipedia entry in the
-    # landmark url set above and store the HTML file to disk
+ 
+    # landmarks
+    if stateSet == "District of Columbia"
+      landmarkUrl = "https://en.wikipedia.org/wiki/List_of_National_Historic_Landmarks_in_Washington,_D.C."
+    else
+      landmarkUrl = "https://en.wikipedia.org/wiki/List_of_National_Historic_Landmarks_in_#{state}"
+    end
+    landmark = urlChecker(landmarkUrl)
+    output = File.open("data/#{state}/landmarks.html","w")
     output.write landmark
     output.close 
-    
+ 
+    # colleges
+    if stateSet == "Georgia"
+      collegesUrl = "https://en.wikipedia.org/wiki/List_of_college_athletic_programs_in_Georgia_(U.S._state)"
+    elsif stateSet == "Washington"
+      collegesUrl = "https://en.wikipedia.org/wiki/List_of_college_athletic_programs_in_Washington_(state)"
+    elsif stateSet == "District of Columbia"
+      collegesUrl = "https://en.wikipedia.org/wiki/List_of_college_athletic_programs_in_Washington,_D.C."
+    else
+      collegesUrl = "https://en.wikipedia.org/wiki/List_of_college_athletic_programs_in_#{state}"
+    end
+    colleges = urlChecker(collegesUrl)
+    output = File.open("data/#{state}/colleges.html","w")
+    output.write colleges
+    output.close 
+
+    # print status
     count = count + 1
     print "%.2f" % (count/statesArrLength.to_f * 100)
     print "% " 
@@ -478,7 +444,7 @@ def pullNames()
      print "% "
    }
    puts ""
-   puts "Success, files stored in #{Dir.pwd}/data/names/"
+   puts "Success, files stored in #{Dir.pwd}/data/"
    puts ""
 end
 
@@ -501,7 +467,7 @@ def pullZip()
     
     zip = urlChecker(url)
     
-    output = File.open("data/#{state}-zip.html","w")
+    output = File.open("data/#{state}/zip.html","w")
     # cycle through array, for each state and store the HTML file containing zip codes to disk
     output.write zip
     output.close  
@@ -519,7 +485,7 @@ end
 def pullAreaCodes()
   puts "Grabbing area codes for all States and storing to disk"
   File.open("data/area/usa-area-codes.csv", "wb") do |saved_file|
-    open("https://docs.google.com/uc?export=download&id=", "rb") do |read_file|
+    open("https://docs.google.com/uc?export=download&id=0B9YAGU9c9zmKV1ZNZFEza2tiSzQ", "rb") do |read_file|
       saved_file.write(read_file.read)
     end
   end
@@ -532,7 +498,7 @@ end
 def pullRoads()
   puts "Grabbing streets and roads for all States and storing to disk"
   File.open("roads.tar.gz", "wb") do |saved_file|
-    open("https://docs.google.com/uc?export=download&id=0B9YAGU9c9zmKSmVieWZDMDJHZlk", "rb") do |read_file|
+    open("https://docs.google.com/uc?export=download&id=0B9YAGU9c9zmKM2xUd1FRaFplZmM", "rb") do |read_file|
       saved_file.write(read_file.read)
     end
   end
@@ -540,7 +506,7 @@ def pullRoads()
   %x[tar -xf roads.tar.gz]
   %x[rm roads.tar.gz]  
   
-  puts "Success, files stored in #{Dir.pwd}/data/"
+  puts "Success, file stored in #{Dir.pwd}/data/"
   puts ""
 end
 
@@ -623,10 +589,16 @@ def cities(stateSet)
     cities = cities.delete_if {|city| city.include?(";") }
     # delete any line that has at least 2 consequtive numbers (year or neighbourhoods in city)
     cities = cities.delete_if {|city| city.match(/\d\d/) }
+    # delete any empty line
+    cities = cities.delete_if {|city| city.empty? }
     # delete any line where the first character of a string starts with a lower case letter
     cities = cities.delete_if {|city| city[0].match(/^[a-z]/)}
     # delete anything within parenthesis and the parenthesis themselves
     cities = cities.each {|city| city.gsub!(/\([^()]*\)/,'')}
+    # replace \n
+    cities = cities.each {|city| city.gsub!(/\n/,'')}
+    # replace !
+    cities = cities.each {|city| city.gsub!(/!/,'')}
     # replace the † character - typically used for references on wikipedia
     cities = cities.each {|city| city.gsub!(/†/,'')}
     # remove all trailing spaces from a string
@@ -642,6 +614,51 @@ def cities(stateSet)
   end
 end
 
+def colleges(stateSet)
+  # replace any spaces in a state with %20 so that the URL is properly formatted
+  state = urlFormatter(stateSet)
+
+  url = "data/#{state}/colleges.html"
+  fileCheck(url)
+  page = urlChecker(url)
+
+  # look for all table rows in the supplied URL as entries for colleges are likely to be in a table
+  row = page.css('table.wikitable tr')
+  # filter down to all table rows containing a td
+  colleges = row.css('td').map {|college| college.text}
+  # sort and delete duplicates, then delete any line that contains brackets 
+  colleges = colleges.sort.uniq.delete_if {|college| college.include?("]") }
+  # delete any line that contains that has http  
+  colleges = colleges.delete_if {|college| college.include?("http") }
+  # delete any line that contains that has a ; - typically coordinates
+  colleges = colleges.delete_if {|college| college.include?(";") }
+  # delete any line that has at least 2 consequtive numbers
+  colleges = colleges.delete_if {|college| college.match(/\d\d/) }
+  # delete any empty line
+  colleges = colleges.delete_if {|college| college.empty? }
+  # delete any line where the first character of a string starts with a lower case letter
+  colleges = colleges.delete_if {|college| college[0].match(/^[a-z]/)}
+  # delete anything within parenthesis and the parenthesis themselves
+  colleges = colleges.each {|college| college.gsub!(/\([^()]*\)/,'')}
+  # replace \n
+  colleges = colleges.each {|college| college.gsub!(/\n/,'')}
+  # replace !
+  colleges = colleges.each {|college| college.gsub!(/!/,'')}
+  # replace the † character - typically used for references on wikipedia
+  colleges = colleges.each {|college| college.gsub!(/†/,'')}
+  # remove all trailing spaces from a string
+  colleges = colleges.each {|college| college.gsub!(/\s+$/,'')}
+  # perform another sort and uniq
+  colleges = colleges.sort.uniq
+  @colleges = postProcessor(colleges)
+  if $quiet != true
+    puts @colleges
+    puts ""
+  end
+  puts "College names in #{stateAbbrv(stateSet)}: #{@colleges.length}"
+end
+
+
 # this method will get all of the landmarks for a state
 def landmarks(stateSet)
   
@@ -655,8 +672,14 @@ def landmarks(stateSet)
   row = page.css('table.wikitable tr')
   # grab the first td from each tr. this is likely going to contain a landmark
   landmark = row.xpath('./td[1]').map {|lm| lm.text}
+  # delete any empty line
+  landmark = landmark.delete_if {|lm| lm.empty? }
   # delete anything within parenthesis and the parenthesis themselves
   landmark = landmark.each {|lm| lm.gsub!(/\([^()]*\)/,'')}
+  # replace \n
+  landmark = landmark.each {|lm| lm.gsub!(/\n/,'')}
+  # replace !
+  landmark = landmark.each {|lm| lm.gsub!(/!/,'')}
   # delete anything within brackets and the brackets themselves
   landmark = landmark.each {|lm| lm.gsub!(/\[[^\[\]]*\]/,'')}
   # remove all trailing spaces from a string
@@ -744,22 +767,6 @@ def roads(stateSet)
   else
     puts "Road names in #{stateAbbrv(stateSet)}:    #{@roads.length}"
   end
-end
-
-# this method will pull a custom version of CeWL down
-def pullCewl()
-  puts "Grabbing CeWL and storing to disk"
-  File.open("cewl.tar.gz", "wb") do |saved_file|
-    open("https://docs.google.com/uc?export=download&id=0B9YAGU9c9zmKVVg2ZEQyWUw3aWs", "rb") do |read_file|
-      saved_file.write(read_file.read)
-    end
-  end
-  
-  %x[tar -xf cewl.tar.gz]
-  %x[rm cewl.tar.gz]  
-  
-  puts "Success, file stored in #{Dir.pwd}/cewl/"
-  puts ""
 end
 
 =begin
@@ -932,6 +939,7 @@ end
 def all(stateSet)
   sportsTeams(stateSet)
   cities(stateSet)
+  colleges(stateSet)
   landmarks(stateSet)
   zip(stateSet)
   areaCode(stateSet)
@@ -1043,6 +1051,11 @@ def allStates()
       @cities.each {|line| allArr.push line.to_s}
     end
     
+    colleges(state)
+    if @colleges.nil? == false
+      @colleges.each {|line| allArr.push line.to_s}
+    end
+    
     landmarks(state)
     if @landmark.nil? == false
       @landmark.each {|line| allArr.push line.to_s}
@@ -1089,6 +1102,10 @@ def output(file)
     @cities.each {|line| outputArr.push line.to_s}
   end
 
+  if @colleges.nil? == false
+    @colleges.each {|line| outputArr.push line.to_s}
+  end
+
   if @landmark.nil? == false
     @landmark.each {|line| outputArr.push line.to_s}
   end
@@ -1110,7 +1127,7 @@ def output(file)
   end
 
   if @cewl.nil? == false
-      @cewl.each {|line| outputArr.push line.to_s}
+    @cewl.each {|line| outputArr.push line.to_s}
   end
 
   if @allCewls.nil? == false
@@ -1147,13 +1164,14 @@ def cli()
   options = OpenStruct.new
   ARGV << '-h' if ARGV.empty?
   OptionParser.new do |opt|
-    #bghv
+    #bfghv
     opt.banner = "Usage: ruby wordsmith.rb [options]"
     opt.on('Main Arguments:')
     opt.on('-s', '--state STATE', 'The US state set for the program') { |o| options.state = o }
     opt.on('State Options:')
     opt.on('-a', '--all', 'Grab everything for the specified state') { |o| options.all = o }
     opt.on('-c', '--cities', 'Grab all city names for the specified state') { |o| options.cities = o }
+    opt.on('-f', '--colleges', 'Grab all college sports for the specified state') { |o| options.colleges = o }
     opt.on('-l', '--landmarks', 'Grab all landmarks for the specified state') { |o| options.landmarks = o }    
     opt.on('-p', '--phone', 'Grab all area codes for the specified state') { |o| options.phone = o }
     opt.on('-r', '--roads', 'Grab all road names in the specified state') { |o| options.roads = o }
@@ -1174,13 +1192,13 @@ def cli()
     opt.on('-y', '--split', 'Split words by space and add') { |o| options.split = o }
     opt.on('-m', '--mangle', 'Add all permutations (-w, -x, -y)') { |o| options.mangle = o }
     opt.on('Management:')
-    opt.on('-u', '--update', 'Update the program') { |o| options.update = o }
-    opt.on('-f', '--force', 'Forcefully update the program') { |o| options.fupdate = o }
+    opt.on('-u', '--update', 'Update data from Internet sources') { |o| options.update = o }
   end.parse!
 
   stateSet = options.state
   all = options.all
   cities = options.cities
+  colleges = options.colleges
   examples = options.examples
   landmarks = options.landmarks
   $length = options.length
@@ -1198,7 +1216,6 @@ def cli()
   $split = options.split
   url = options.url
   update = options.update
-  updateForce = options.fupdate
   zip = options.zip
 
   # turn on all manipulation switches for mangle
@@ -1213,6 +1230,7 @@ def cli()
   if stateSet.to_s.upcase != "ALL"
     if stateSet.nil? == false && all == true then all(state) end
     if stateSet.nil? == false && cities == true then cities(state) end
+    if stateSet.nil? == false && colleges == true then colleges(state) end
     if stateSet.nil? == false && landmarks == true then landmarks(state) end  
     if stateSet.nil? == false && phone == true then areaCode(state) end  
     if stateSet.nil? == false && roads == true then roads(state) end    
@@ -1224,7 +1242,6 @@ def cli()
   if examples == true then examples() end  
   if names == true then names() end  
   if update == true then pull() end    
-  if updateForce == true then fpull() end 
   if url.nil? == false then scrapeSingle(url) end 
   if multiUrl.nil? == false then scrapeMultiple(multiUrl) end 
   if outputFile.nil? == false then output(outputFile) end

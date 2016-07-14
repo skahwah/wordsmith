@@ -19,6 +19,7 @@ Main Arguments:
 State Options:
     -a, --all                        Grab everything for the specified state
     -c, --cities                     Grab all city names for the specified state
+    -f, --colleges                   Grab all college sports for the specified state
     -l, --landmarks                  Grab all landmarks for the specified state
     -p, --phone                      Grab all area codes for the specified state
     -r, --roads                      Grab all road names in the specified state
@@ -39,8 +40,7 @@ Output Options:
     -y, --split                      Split words by space and add
     -m, --mangle                     Add all permutations (-w, -x, -y)
 Management:
-    -u, --update                     Update the program
-    -f, --force                      Forcefully update the program
+    -u, --update                     Update data from Internet sources
 ```
 
 #### Command Examples

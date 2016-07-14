@@ -518,8 +518,8 @@ end
 # this method will pull all area codes for each state and store to disk
 def pullAreaCodes()
   puts "Grabbing area codes for all States and storing to disk"
-  File.open("data/usa-area-codes.csv", "wb") do |saved_file|
-    open("https://docs.google.com/uc?export=download&id=0B9YAGU9c9zmKV1ZNZFEza2tiSzQ", "rb") do |read_file|
+  File.open("data/area/usa-area-codes.csv", "wb") do |saved_file|
+    open("https://docs.google.com/uc?export=download&id=", "rb") do |read_file|
       saved_file.write(read_file.read)
     end
   end
@@ -532,7 +532,7 @@ end
 def pullRoads()
   puts "Grabbing streets and roads for all States and storing to disk"
   File.open("roads.tar.gz", "wb") do |saved_file|
-    open("https://docs.google.com/uc?export=download&id=0B9YAGU9c9zmKbF9LSTZCY1UzNXc", "rb") do |read_file|
+    open("https://docs.google.com/uc?export=download&id=0B9YAGU9c9zmKSmVieWZDMDJHZlk", "rb") do |read_file|
       saved_file.write(read_file.read)
     end
   end
@@ -540,7 +540,7 @@ def pullRoads()
   %x[tar -xf roads.tar.gz]
   %x[rm roads.tar.gz]  
   
-  puts "Success, file stored in #{Dir.pwd}/data/"
+  puts "Success, files stored in #{Dir.pwd}/data/"
   puts ""
 end
 

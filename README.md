@@ -15,7 +15,7 @@ Twitter: @skawasec & @porterhau5
 
 Usage: ruby wordsmith.rb [options]
 Main Arguments:
-    -s, --state STATE                The US state set for the program
+    -s, --state <states>             Comma-delimited list of US states
 State Options:
     -a, --all                        Grab everything for the specified state
     -c, --cities                     Grab all city names for the specified state
@@ -52,6 +52,9 @@ Twitter: @skawasec & @porterhau5
 
 Grab all of the cities and towns for California
     ruby wordsmith.rb -s CA -c
+
+Grab all of the cities for California, Montana, and Florida
+    ruby wordsmith.rb -s CA,MT,FL -c
 
 Grab all sports teams for California, mangle the output
     ruby wordsmith.rb -s CA -t -m

@@ -306,7 +306,7 @@ def sportsTeams()
    else
      teamspp = postProcessor(teams)
      @teams = @teams + teamspp
-     if @quiet != true
+     if $quiet != true
        puts teamspp
        puts ""
      end
@@ -321,7 +321,7 @@ def cities()
     cities = ["Washington"]
     citiespp = postProcessor(cities)
     @cities = @cities + citiespp
-    if @quiet != true
+    if $quiet != true
       puts citiespp
       puts ""
     end
@@ -362,7 +362,7 @@ def cities()
 
     citiespp = postProcessor(cities)
     @cities = @cities + citiespp
-    if @quiet != true
+    if $quiet != true
       puts citiespp
       puts ""
     end
@@ -407,7 +407,7 @@ def colleges()
 
   collegespp = postProcessor(colleges)
   @colleges = @colleges + collegespp
-  if @quiet != true
+  if $quiet != true
     puts collegespp
     puts ""
   end
@@ -443,7 +443,7 @@ def landmarks()
 
   landmarkpp = postProcessor(temp)
   @landmark = @landmark + landmarkpp
-  if @quiet != true
+  if $quiet != true
     puts landmarkpp
     puts ""
   end
@@ -469,7 +469,7 @@ def zip()
   zip.delete_at(0)
 
   @zip = @zip + zip
-  if @quiet != true
+  if $quiet != true
     puts zip
     puts ""
   end
@@ -486,7 +486,7 @@ def areaCode()
   stateLine.delete_at(0)
 
   @areaCode = @areaCode + stateLine
-  if @quiet != true
+  if $quiet != true
     puts stateLine
     puts ""
   end
@@ -505,7 +505,7 @@ def roads()
   roadspp = postProcessor(roads)
   @roads = @roads + roadspp
 
-  if @quiet != true
+  if $quiet != true
     puts roadspp
     puts ""
   end
@@ -539,7 +539,7 @@ def names()
   allNames = names.map(&:downcase).map(&:capitalize).sort.uniq
 
   @allNames = @allNames + allNames
-  if @quiet != true
+  if $quiet != true
     puts allNames
     puts ""
   end
@@ -582,7 +582,7 @@ def scrapeSingle(url)
     puts "#{url} seems to be incorrect. Please check it in a web browser and try again."
     puts "Total unique words that CeWL grabbed from #{url} is: 0"
   else
-    if @quiet != true
+    if $quiet != true
       puts @cewl
       puts ""
     end
@@ -630,7 +630,7 @@ def scrapeMultiple(infile)
     puts "All URLs seems to be incorrect. Please check them in a web browser and try again."
     puts "Total unique words that CeWL grabbed from is: 0"
   else
-    if @quiet != true
+    if $quiet != true
       puts @allCewls
       puts ""
     end
@@ -654,8 +654,6 @@ end
 def examples()
   puts "Grab all of the cities and towns for California"
   puts "    ruby wordsmith.rb -s CA -c"
-  puts "\nGrab all of the cities for California, Montana, and Florida"
-  puts "    ruby wordsmith.rb -s CA,MT,FL -c"
   puts "\nGrab all sports teams for California, mangle the output"
   puts "    ruby wordsmith.rb -s CA -t -m"
   puts "\nGrab all road names for California, mangle the output, convert to lowercase"
@@ -690,7 +688,7 @@ def postProcessor(array)
   finalArr = []
 
   # split words by spaces before manipulating
-  if @split
+  if $split
     count = 0
     length = array.length
 
@@ -710,21 +708,21 @@ def postProcessor(array)
   inputArray.each {|word| finalArr.push word.to_s}
 
   # add words with special characters removed
-  if @specials
+  if $specials
     inputArray.each {|word| finalArr.push word.to_s.gsub(/[^0-9A-Za-z]/, '')}
   end
 
   # add words with spaces removed
-  if @spaces
+  if $spaces
     inputArray.each {|word| finalArr.push word.to_s.gsub(/[ ]/, '')}
   end
 
-  # remove words with less than @length characters
-  if @length.nil? == false
-    finalArr.delete_if {|word| word.length < @length}
+  # remove words with less than $length characters
+  if $length.nil? == false
+    finalArr.delete_if {|word| word.length < $length}
   end
 
-  if @lower
+  if $lower
     finalArr.map!(&:downcase)
   end
 
@@ -799,9 +797,10 @@ def cli()
   options = OpenStruct.new
   ARGV << '-h' if ARGV.empty?
   OptionParser.new do |opt|
+    #bghv
     opt.banner = "Usage: ruby wordsmith.rb [options]"
     opt.on('Main Arguments:')
-    opt.on('-s', '--state <states>', Array, 'Comma-delimited list of US states') { |o| options.stateArgs = o }
+    opt.on('-s', '--state STATE', 'The US state set for the program') { |o| options.state = o }
     opt.on('State Options:')
     opt.on('-a', '--all', 'Grab everything for the specified state') { |o| options.all = o }
     opt.on('-c', '--cities', 'Grab all city names for the specified state') { |o| options.cities = o }
@@ -829,25 +828,25 @@ def cli()
     opt.on('-u', '--update', 'Update data from Internet sources') { |o| options.update = o }
   end.parse!
 
-  stateArgs = options.stateArgs
+  stateSet = options.state
   all = options.all
   cities = options.cities
   colleges = options.colleges
   examples = options.examples
   landmarks = options.landmarks
-  @length = options.length
-  @lower = options.lower
-  @mangle = options.mangle
+  $length = options.length
+  $lower = options.lower
+  $mangle = options.mangle
   multiUrl = options.multi
   names = options.names
   outputFile = options.out
   phone = options.phone
-  @quiet = options.quiet
+  $quiet = options.quiet
   roads = options.roads
   sports = options.sports
-  @spaces = options.spaces
-  @specials = options.specials
-  @split = options.split
+  $spaces = options.spaces
+  $specials = options.specials
+  $split = options.split
   url = options.url
   update = options.update
   zip = options.zip
@@ -865,10 +864,10 @@ def cli()
   @allNames = []
 
   # turn on all manipulation switches for mangle
-  if @mangle == true
-    @spaces = true
-    @split = true
-    @specials = true
+  if $mangle == true
+    $spaces = true
+    $split = true
+    $specials = true
   end
 
   @sources = YAML.load_file('sources.yml')
@@ -878,8 +877,7 @@ def cli()
   @statesArrLength = @statesArr.length.to_i
 
   # these options do need a state to be set in order to run
-  # if "all" is in array, do all states & options
-  if not stateArgs.nil? and stateArgs.any?{ |s| s.casecmp('ALL') == 0 }
+  if stateSet.to_s.upcase == "ALL"
     count = 0
     @statesArr.each {
       states(@statesArr.keys[count])
@@ -887,10 +885,9 @@ def cli()
       count = count + 1
     }
     names()
-  # else, loop through each state provided
-  elsif not stateArgs.nil?
-    stateArgs.each { |state|
-      states(state)
+  else
+    if not stateSet.nil?
+      states(options.state)
       if all
         all()
       else
@@ -902,7 +899,7 @@ def cli()
         if sports then sportsTeams() end
         if zip then zip() end
       end
-    }
+    end
   end
 
   # these options do not need a state to be set in order to run
@@ -933,21 +930,23 @@ def firstRun()
       %x[rm -rf data/]
       %x[tar -xf data.tar.gz]
       puts blue("Unpack completed!")
-      cewlpath = which("cewl")
-      if cewlpath.nil?
-        puts ""
-        puts orange("WARNING: CeWL not found in path. Install CeWL and put in path to use -d or -i options.")
-        puts ""
-      else
-        puts ""
-        puts blue("CeWL found: #{cewlpath}")
-        puts ""
-      end
+      puts ""
     else
       puts red("sources.yml not found. Aborting.")
       abort
     end
   end
+  
+  cewlpath = which("cewl")
+  if cewlpath.nil?
+    puts orange("WARNING: CeWL not found in path. Install CeWL and put in path to use -d or -i options.")
+    puts ""
+  else
+    puts ""
+    puts blue("CeWL found: #{cewlpath}")
+    puts ""
+  end
+  
 end
 
 title()

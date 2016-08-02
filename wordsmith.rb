@@ -946,7 +946,6 @@ def firstRun()
     puts blue("CeWL found: #{cewlpath}")
     puts ""
   end
-  
 end
 
 title()

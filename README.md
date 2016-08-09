@@ -87,3 +87,6 @@ A Gemfile has been included to simplify gem installation. These can be installed
 Wordsmith uses data that's been compressed in data.tar.gz. On first run, Wordsmith will unpack this to a directory called "data/" in the current working directory. This can be circumvented manually using `tar -xf data.tar.gz`. 
 
 Two of Wordsmith's options, -d and -i, use CeWL to scrape words from user-supplied URLs. Wordsmith assumes the CeWL executable (cewl) is on the user's PATH. If cewl is not found, Wordsmith will skip the URLs and continue. Instructions for installing CeWL can be found in Robin Wood's CeWL repository: https://github.com/digininja/CeWL
+
+#### Presentation
+Check out our BSides LV 2016 PowerPoint presentation here: http://www.slideshare.net/SanjivKawa/crafting-tailored-wordlists-with-wordsmith

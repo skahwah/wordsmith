@@ -2,7 +2,7 @@
 
 The aim of Wordsmith is to assist with creating tailored wordlists and usernames that are primarilly based on geolocation. 
 
-authors: [@hackerjiv](https://twitter.com/hackerjiv) & [porterhau5](https://twitter.com/porterhau5)
+authors: [@hackerjiv](https://twitter.com/hackerjiv) & [@porterhau5](https://twitter.com/porterhau5)
 
 #### Installation
 

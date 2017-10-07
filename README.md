@@ -223,3 +223,5 @@ Run CeWL against list of URLs contained in urls.txt, write to file out.txt
 Wordsmith should work without any external gems, with the exception of the CeWL integration options (`-d`, `-i`). These features are completely optional and can be ignored if not using them. A Gemfile has been included to simplify gem installation for CeWL. These can be installed using `bundle install`. Alternatively, each gem can be installed manually using `gem install <gem>`. Wordsmith assumes the CeWL executable (cewl) is on the user's PATH. If cewl is not found, Wordsmith will skip the URLs and continue. Instructions for installing CeWL can be found in Robin Wood's CeWL repository: https://github.com/digininja/CeWL
 
 Wordsmith uses data that's been compressed in data.tar.xz. On first run, Wordsmith will unpack this to a directory called "data/" in the current working directory. This can be circumvented manually using `tar -xf data.tar.xz`.
+
+BSidesDC 2017 Presentation - The world is y0ur$: Geolocation-based wordlist generation with wordsmith: https://www.slideshare.net/SanjivKawa/the-world-is-y0ur-geolocationbased-wordlist-generation-with-wordsmith-80562011

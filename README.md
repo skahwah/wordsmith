@@ -224,4 +224,4 @@ Wordsmith should work without any external gems, with the exception of the CeWL 
 
 Wordsmith uses data that's been compressed in data.tar.xz. On first run, Wordsmith will unpack this to a directory called "data/" in the current working directory. This can be circumvented manually using `tar -xf data.tar.xz`.
 
-BSidesDC 2017 Presentation - The world is y0ur$: Geolocation-based wordlist generation with wordsmith: https://www.slideshare.net/SanjivKawa/the-world-is-y0ur-geolocationbased-wordlist-generation-with-wordsmith-80562011
+BSidesDC 2017 Presentation - <a href="https://www.slideshare.net/SanjivKawa/the-world-is-y0ur-geolocationbased-wordlist-generation-with-wordsmith-80562011">The world is y0ur$: Geolocation-based wordlist generation with wordsmith</a>

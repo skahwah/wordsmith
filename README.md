@@ -1,25 +1,14 @@
 ### wordsmith.rb
 
-<<<<<<< Updated upstream:README.md
-The aim of Wordsmith is to assist with creating tailored wordlists. This is mostly based on geolocation.
-=======
-<<<<<<< HEAD
 The aim of Wordsmith is to assist with creating tailored wordlists and usernames that are primarilly based on geolocation. 
-=======
-The aim of Wordsmith is to assist with creating tailored wordlists. This is mostly based on geolocation.
->>>>>>> origin/master
->>>>>>> Stashed changes:README.md-tp
 
-authors: @hackerjiv & @porterhau5
+authors: [@hackerjiv](https://twitter.com/hackerjiv) & [porterhau5](https://twitter.com/porterhau5)
 
 #### Installation
 
 On first run, Wordsmith will unpack some files from data.tar.xz. This may take a few seconds.
 
 ``` shell
-<<<<<<< Updated upstream:README.md
-=======
-<<<<<<< HEAD
 $ git clone https://github.com/skahwah/wordsmith.git
 Cloning into 'wordsmith'...
 remote: Counting objects: 651, done.
@@ -29,7 +18,6 @@ Resolving deltas: 100% (337/337), done.
 
 $ cd wordsmith
 $ ruby wordsmith.rb
->>>>>>> Stashed changes:README.md-tp
 wordsmith v2.0.7
 Written by: Sanjiv "Trashcan Head" Kawa & Tom "Pain Train" Porter
 Twitter: @hackerjiv & @porterhau5
@@ -45,8 +33,6 @@ Twitter: @hackerjiv & @porterhau5
 
 ``` shell
 $ ruby wordsmith.rb
-=======
->>>>>>> origin/master
 wordsmith v2.0.7
 Written by: Sanjiv "Trashcan Head" Kawa & Tom "Pain Train" Porter
 Twitter: @hackerjiv & @porterhau5

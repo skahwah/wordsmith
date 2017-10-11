@@ -15,6 +15,7 @@ All notable changes to this project will be documented in this file.
 ### Fixed
  - fixed YAML config files for ata,bvt,hmd,iot,sgs,sjm
  - sort and uniq order, would fail when using -o option
+ - sort for child node results (-C)
 
 
 ## [2.0.6] - 2017-09-18

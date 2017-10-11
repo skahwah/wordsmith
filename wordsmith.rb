@@ -506,7 +506,7 @@ end
 # out to file
 def output(file)
 
-  @finalArr.uniq!.sort!
+  @finalArr.sort!.uniq!
   @finalArr = @finalArr.reject {|el| el.empty?}
 
   File.open(file,"w" ) do |f|

@@ -126,8 +126,8 @@ def show_children(inputs)
   puts "boundary-name : attribute1 attribute2 attribute3 etc."
 
   inputs.each do |input|
-    subdirs = Dir.glob("#{input}/**/*/")
-    files = Dir.glob("#{input}/*.txt")
+    subdirs = Dir.glob("#{input}/**/*/").sort
+    files = Dir.glob("#{input}/*.txt").sort
     if not subdirs.empty? or not files.empty?
       puts ""
       # change "./data/abc/de/fegh" to "abc-de-fegh"
@@ -145,7 +145,7 @@ def show_children(inputs)
         subdirout = "#{subdir.sub(/^.\/data\//, '').gsub(/\//,'-').chomp("-")}"
         depth = subdirout.count("-") - dir.count("-")
         out = "|   " * (depth - 1) + "|-- " + subdirout
-        files = Dir.glob("#{subdir}*.txt")
+        files = Dir.glob("#{subdir}*.txt").sort
         if not files.empty?
           out = "#{out} : "
           files.each do |f|

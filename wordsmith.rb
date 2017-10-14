@@ -81,7 +81,7 @@ def examples()
   puts "Show all children nodes and attributes for Great Britain"
   puts "    ruby wordsmith.rb -I gbr -C"
   puts "\nGrab all of the most popular names for USA"
-  puts "    ruby wordsmith.rb -I usa -n"
+  puts "    ruby wordsmith.rb -I usa -N"
   puts "\nGrab all of the zip codes for California"
   puts "    ruby wordsmith.rb -I usa-ca -z"
   puts "\nGrab all of the sports teams for Charlotte, NC, USA"

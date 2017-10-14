@@ -159,7 +159,7 @@ Show all children nodes and attributes for Great Britain
     ruby wordsmith.rb -I gbr -C
 
 Grab all of the most popular names for USA
-    ruby wordsmith.rb -I usa -n
+    ruby wordsmith.rb -I usa -N
 
 Grab all of the zip codes for California
     ruby wordsmith.rb -I usa-ca -z

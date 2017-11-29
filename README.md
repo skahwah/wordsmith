@@ -1,8 +1,10 @@
 ### wordsmith.rb
 
-The aim of Wordsmith is to assist with creating tailored wordlists and usernames that are primarilly based on geolocation. 
+The aim of Wordsmith is to assist with creating tailored wordlists and usernames that are primarilly based on geolocation.
 
 authors: [@hackerjiv](https://twitter.com/hackerjiv) & [@porterhau5](https://twitter.com/porterhau5)
+
+[Wild West Hackin' Fest 2017:](https://www.youtube.com/watch?v=-ZNNA7Z0JGM)
 
 #### Installation
 

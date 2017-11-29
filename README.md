@@ -4,7 +4,7 @@ The aim of Wordsmith is to assist with creating tailored wordlists and usernames
 
 authors: [@hackerjiv](https://twitter.com/hackerjiv) & [@porterhau5](https://twitter.com/porterhau5)
 
-[Wild West Hackin' Fest 2017:](https://www.youtube.com/watch?v=-ZNNA7Z0JGM)
+[Wild West Hackin' Fest 2017](https://www.youtube.com/watch?v=-ZNNA7Z0JGM)
 
 #### Installation
 

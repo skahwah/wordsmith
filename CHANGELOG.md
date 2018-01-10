@@ -1,6 +1,18 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [2.0.8] - 2018-01-10
+### Added
+ - USA geonames (1,828,312 new words)
+   - Water/Island features: harbors, channels, lakes, beaches, canals, streams, etc. (--waters)
+   - Man-made structures: schools, churches, hospitals, airports, bridges, buildings, etc. (--structures)
+   - Land features: forests, parks, trails, plains, ridges, etc. (--lands)
+   - Populated places: locales, towns, villages, settlements, census designated places, etc. (--places)
+
+### Fixed
+ - "religious" typo
+
+
 ## [2.0.7] - 2017-10-11
 ### Added
  - specify N most populous countries as input (ex: -I 10)

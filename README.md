@@ -4,7 +4,9 @@ The aim of Wordsmith is to assist with creating tailored wordlists and usernames
 
 authors: [@hackerjiv](https://twitter.com/hackerjiv) & [@porterhau5](https://twitter.com/porterhau5)
 
-Wild West Hackin' Fest 2017 [presentation](https://www.youtube.com/watch?v=-ZNNA7Z0JGM)
+Wild West Hackin' Fest 2017 [presentation](https://www.youtube.com/watch?v=-ZNNA7Z0JGM).
+
+Wordsmith Parsers project: https://github.com/skahwah/wordsmith_parsers
 
 #### Installation
 
@@ -21,8 +23,7 @@ Resolving deltas: 100% (337/337), done.
 $ cd wordsmith
 $ ruby wordsmith.rb
 wordsmith v2.0.7
-Written by: Sanjiv "Trashcan Head" Kawa & Tom "Pain Train" Porter
-Twitter: @hackerjiv & @porterhau5
+Written by: Sanjiv Kawa (@hackerjiv) & Tom Porter (@porterhau5)
 
 [*] Hello new wordsmither!
 [*] This script will remove the data/ directory in the current working directory. Enter 'y' to continue: y
@@ -35,9 +36,8 @@ Twitter: @hackerjiv & @porterhau5
 
 ``` shell
 $ ruby wordsmith.rb
-wordsmith v2.0.7
-Written by: Sanjiv "Trashcan Head" Kawa & Tom "Pain Train" Porter
-Twitter: @hackerjiv & @porterhau5
+wordsmith v2.0.8
+Written by: Sanjiv Kawa (@hackerjiv) & Tom Porter (@porterhau5)
 
 Usage: ruby wordsmith.rb [options]
 Main Arguments:
@@ -55,10 +55,14 @@ Input Options:
     -L, --last-names                 Grab all last names
     -p, --phone                      Grab all area codes
     -r, --roads                      Grab all road names
-    -g, --religion                   Grab the most popular relgious text(s)
+    -g, --religion                   Grab the most popular religious text(s)
     -t, --teams                      Grab all major sports teams
     -u, --counties                   Grab all counties
     -z, --zip                        Grab all zip codes
+        --lands                      Grab all land features
+        --places                     Grab all populated places
+        --structures                 Grab all structures/buildings
+        --waters                     Grab all water/island features
 Username Generation Options:
         --filn                       FirstInitialLastName (bsmith)
         --fnln                       FirstNameLastName (bobsmith)
@@ -99,9 +103,8 @@ Info Options:
 #### Command Examples
 ```
 $ ruby wordsmith.rb -E
-wordsmith v2.0.7
-Written by: Sanjiv "Trashcan Head" Kawa & Tom "Pain Train" Porter
-Twitter: @hackerjiv & @porterhau5
+wordsmith v2.0.8
+Written by: Sanjiv Kawa (@hackerjiv) & Tom Porter (@porterhau5)
 
 Input names:
 ------------

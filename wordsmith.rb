@@ -8,9 +8,8 @@ require 'yaml'
 
 # Print the title of the program on run
 def title()
-  puts "wordsmith v2.0.7"
-  puts "Written by: Sanjiv \"Trashcan Head\" Kawa & Tom \"Pain Train\" Porter"
-  puts "Twitter: @hackerjiv & @porterhau5"
+  puts "wordsmith v2.0.8"
+  puts "Written by: Sanjiv Kawa (@hackerjiv) & Tom Porter (@porterhau5)"
   puts ""
 end
 
@@ -612,7 +611,7 @@ def get_attribute(dir_path, options, type)
 
   if type == "other"
     all_files = Dir.glob("#{dir_path}/**/*.txt")
-    attrs = ["areacodes","cia","cities","colleges","counties","fnames","landmarks","lnames","roads","sports","zipcodes"]
+    attrs = ["areacodes","cia","cities","colleges","counties","fnames","landmarks","lands","lnames","places","roads","sports","structures","waters","zipcodes"]
     attrs.each do |attribute|
       all_files.delete_if{ |f| f.include?("#{attribute}.txt")  }
     end
@@ -678,7 +677,7 @@ def get_attribute(dir_path, options, type)
   end
 end
 
-# open country.yaml and identify what the two most popular relgions are
+# open country.yaml and identify what the two most popular religions are
 def find_religion(dir_path, options)
   #yaml_file = dir_path + "/" + dir_path.split("/")[2] + ".yaml"
   yaml_file = "./data/" + dir_path.split("/")[2] + "/" + dir_path.split("/")[2]  + ".yaml"
@@ -787,14 +786,18 @@ def cycle(options, dir_path)
   if options.all or options.colleges then get_attribute(dir_path, options, "colleges") end
   if options.all or options.counties then get_attribute(dir_path, options, "counties") end
   if options.all or options.landmarks then get_attribute(dir_path, options, "landmarks") end
+  if options.all or options.lands then get_attribute(dir_path, options, "lands") end
   # code we'll save for later if we bring back male/female name separation
   #if options.all or options.fnames or options.ffnames or options.mfnames then get_attribute(dir_path, options, "fnames") end
   if options.all or options.fnames then get_attribute(dir_path, options, "fnames") end
   if options.all or options.lnames then get_attribute(dir_path, options, "lnames") end
   if options.all or options.other then get_attribute(dir_path, options, "other") end
   if options.all or options.phone then get_attribute(dir_path, options, "areacodes") end
+  if options.all or options.places then get_attribute(dir_path, options, "places") end
   if options.all or options.roads then get_attribute(dir_path, options, "roads") end
   if options.all or options.sports then get_attribute(dir_path, options, "sports") end
+  if options.all or options.structures then get_attribute(dir_path, options, "structures") end
+  if options.all or options.waters then get_attribute(dir_path, options, "waters") end
   if options.all or options.zip then get_attribute(dir_path, options, "zipcodes") end
   if options.all or options.religion then find_religion(dir_path, options) end
   if options.all or options.language then find_language(dir_path, options) end
@@ -828,10 +831,14 @@ def main()
     #opt.on('-M', '--male-fnames', 'Grab all male first names') { |o| options.mfnames = o }
     opt.on('-p', '--phone', 'Grab all area codes') { |o| options.phone = o }
     opt.on('-r', '--roads', 'Grab all road names') { |o| options.roads = o }
-    opt.on('-g', '--religion', 'Grab the most popular relgious text(s)') { |o| options.religion = o }
+    opt.on('-g', '--religion', 'Grab the most popular religious text(s)') { |o| options.religion = o }
     opt.on('-t', '--teams', 'Grab all major sports teams') { |o| options.sports = o }
     opt.on('-u', '--counties', 'Grab all counties') { |o| options.counties = o }
     opt.on('-z', '--zip', 'Grab all zip codes') { |o| options.zip = o }
+    opt.on('--lands', 'Grab all land features') { |o| options.lands = o }
+    opt.on('--places', 'Grab all populated places') { |o| options.places = o }
+    opt.on('--structures', 'Grab all structures/buildings') { |o| options.structures = o }
+    opt.on('--waters', 'Grab all water/island features') { |o| options.waters = o }
     opt.on('Username Generation Options:')
     opt.on('--filn', 'FirstInitialLastName (bsmith)') { |o| options.filn = o }
     opt.on('--fnln', 'FirstNameLastName (bobsmith)') { |o| options.fnln = o }

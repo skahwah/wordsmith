@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file.
    - Man-made structures: schools, churches, hospitals, airports, bridges, buildings, etc. (--structures)
    - Land features: forests, parks, trails, plains, ridges, etc. (--lands)
    - Populated places: locales, towns, villages, settlements, census designated places, etc. (--places)
+   - Full list of features included here: https://geonames.usgs.gov/apex/f?p=gnispq:8:0:::::
 
 ### Fixed
  - "religious" typo

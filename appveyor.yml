@@ -1,0 +1,19 @@
+# Automatically create release with each commit. Uses the top most version found in CHANGELOG.md as tag. Will not overwrite release if tag already exists. Create new version in CHANGELOG.md to create a new release.
+
+before_deploy:
+ - ps: Set-AppveyorBuildVariable -Name VER -Value (sls "^## " .\CHANGELOG.md | select -exp line | select -first 1 | ForEach-Object { $_.split("]")[0] } | ForEach-Object { $_.split("[")[1] })
+
+deploy:
+  - provider: GitHub
+    tag: v$(VER)
+    description: 'After cloning/downloading the Wordsmith repository for this release ($(APPVEYOR_REPO_COMMIT)), download `data.tar.xz` and place inside wordsmith directory.'
+    #force_update: true
+    auth_token:
+      secure: LGNzTMUPT4zvTNSh2VBYQ6Uy2JH0e79jONqr3bCB1yjHhTDxnGWSpmKWjRtItp2c
+
+# Don't actually build.
+build: off
+
+branches:
+  only:
+    - master

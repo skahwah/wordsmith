@@ -1,6 +1,20 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [2.1.0] - 2018-01-11
+### Added
+ - World geonames (11,332,168 new words)
+   - Included underneath aus: Ashmore and Cartier Islands (at), Coral Sea Islands (cr)
+   - Included underneath chn: Paracel Islands (pf), Spratly Islands (pg)
+   - Included underneath fra: Clipperton Island (ip)
+   - Included underneath gbr: Akrotiri (ax), Dhekelia (dx)
+   - Included underneath isr: No Man's Land (nm)
+   - Included underneath pse: Gaza Strip (gz)
+   - Included underneath sjm: Jan Mayen (jn)
+   - Included underneath usa: Oceans (os), Undersea Features (uf)
+ - Kosovo data (xks), added to "europe" region
+
+
 ## [2.0.8] - 2018-01-10
 ### Added
  - USA geonames (1,828,312 new words)

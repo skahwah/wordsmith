@@ -8,7 +8,7 @@ require 'yaml'
 
 # Print the title of the program on run
 def title()
-  puts "wordsmith v2.0.8"
+  puts "wordsmith v2.1.0"
   puts "Written by: Sanjiv Kawa (@hackerjiv) & Tom Porter (@porterhau5)"
   puts ""
 end

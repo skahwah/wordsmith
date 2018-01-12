@@ -22,7 +22,7 @@ Resolving deltas: 100% (337/337), done.
 
 $ cd wordsmith
 $ ruby wordsmith.rb
-wordsmith v2.0.7
+wordsmith v2.1.0
 Written by: Sanjiv Kawa (@hackerjiv) & Tom Porter (@porterhau5)
 
 [*] Hello new wordsmither!
@@ -36,7 +36,7 @@ Written by: Sanjiv Kawa (@hackerjiv) & Tom Porter (@porterhau5)
 
 ``` shell
 $ ruby wordsmith.rb
-wordsmith v2.0.8
+wordsmith v2.1.0
 Written by: Sanjiv Kawa (@hackerjiv) & Tom Porter (@porterhau5)
 
 Usage: ruby wordsmith.rb [options]
@@ -103,7 +103,7 @@ Info Options:
 #### Command Examples
 ```
 $ ruby wordsmith.rb -E
-wordsmith v2.0.8
+wordsmith v2.1.0
 Written by: Sanjiv Kawa (@hackerjiv) & Tom Porter (@porterhau5)
 
 Input names:

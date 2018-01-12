@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file.
    - Included underneath sjm: Jan Mayen (jn)
    - Included underneath usa: Oceans (os), Undersea Features (uf)
  - Kosovo data (xks), added to "europe" region
+ - Appveyor automatic releases
 
 
 ## [2.0.8] - 2018-01-10

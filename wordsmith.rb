@@ -8,7 +8,8 @@ require 'yaml'
 
 # Print the title of the program on run
 def title()
-  puts "wordsmith v2.1.0"
+  @version = "v2.1.1"
+  puts "wordsmith #{@version}"
   puts "Written by: Sanjiv Kawa (@hackerjiv) & Tom Porter (@porterhau5)"
   puts ""
 end
@@ -984,8 +985,10 @@ def checkFiles()
   if File.exist?(dataCheck) == false || File.exist?(regionsCheck) == false
     archiveCheck = "data.tar.xz"
     if File.exist?(archiveCheck) == false
-      puts "[!] data/regions.csv and data.tar.xz not detected! Try changing to the wordsmith directory."
+      puts "[!] data/regions.csv and data.tar.xz not detected! Try downloading data.tar.xz:"
+      puts "      $ wget https://github.com/skahwah/wordsmith/releases/download/#{@version}/data.tar.xz"
       puts ""
+      puts "[!] If data.tar.xz is downloaded, then try changing to the wordsmith directory."
       abort
     elsif File.exist?(dataCheck) == false
       puts "[*] Hello new wordsmither!"

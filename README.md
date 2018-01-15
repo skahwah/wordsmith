@@ -2,27 +2,45 @@
 
 The aim of Wordsmith is to assist with creating tailored wordlists and usernames that are primarilly based on geolocation.
 
-authors: [@hackerjiv](https://twitter.com/hackerjiv) & [@porterhau5](https://twitter.com/porterhau5)
+Authors: [@hackerjiv](https://twitter.com/hackerjiv) & [@porterhau5](https://twitter.com/porterhau5).
 
 Wild West Hackin' Fest 2017 [presentation](https://www.youtube.com/watch?v=-ZNNA7Z0JGM).
 
-Wordsmith Parsers project: https://github.com/skahwah/wordsmith_parsers
+Wordsmith Parsers project: https://github.com/skahwah/wordsmith_parsers.
 
 #### Installation
 
-On first run, Wordsmith will unpack some files from data.tar.xz. This may take a few seconds.
+Start by cloning the repo or downloading the latest release:
 
 ``` shell
 $ git clone https://github.com/skahwah/wordsmith.git
 Cloning into 'wordsmith'...
-remote: Counting objects: 651, done.
-remote: Compressing objects: 100% (23/23), done.
-Receiving objects: 100% (651/651), 166.45 MiB | 2.20 MiB/s, done.
-Resolving deltas: 100% (337/337), done.
+remote: Counting objects: 165, done.
+remote: Compressing objects: 100% (62/62), done.
+remote: Total 165 (delta 55), reused 117 (delta 55), pack-reused 48
+Receiving objects: 100% (165/165), 61.99 KiB | 1.05 MiB/s, done.
+Resolving deltas: 100% (92/92), done.
+```
 
+Then download the latest `data.tar.xz` from the Releases page and place it into the wordsmith directory:
+``` shell
 $ cd wordsmith
 $ ruby wordsmith.rb
-wordsmith v2.1.0
+wordsmith v2.1.1
+Written by: Sanjiv Kawa (@hackerjiv) & Tom Porter (@porterhau5)
+
+[!] data/regions.csv and data.tar.xz not detected! Try downloading data.tar.xz:
+      $ wget https://github.com/skahwah/wordsmith/releases/download/v2.1.1/data.tar.xz
+
+[!] If data.tar.xz is downloaded, then try changing to the wordsmith directory.
+
+$ wget https://github.com/skahwah/wordsmith/releases/download/v2.1.1/data.tar.xz
+```
+
+On next run, Wordsmith will unpack some files from `data.tar.xz` to complete the installation. This may take a few seconds:
+``` shell
+$ ruby wordsmith.rb
+wordsmith v2.1.1
 Written by: Sanjiv Kawa (@hackerjiv) & Tom Porter (@porterhau5)
 
 [*] Hello new wordsmither!
@@ -36,7 +54,7 @@ Written by: Sanjiv Kawa (@hackerjiv) & Tom Porter (@porterhau5)
 
 ``` shell
 $ ruby wordsmith.rb
-wordsmith v2.1.0
+wordsmith v2.1.1
 Written by: Sanjiv Kawa (@hackerjiv) & Tom Porter (@porterhau5)
 
 Usage: ruby wordsmith.rb [options]
@@ -103,7 +121,7 @@ Info Options:
 #### Command Examples
 ```
 $ ruby wordsmith.rb -E
-wordsmith v2.1.0
+wordsmith v2.1.1
 Written by: Sanjiv Kawa (@hackerjiv) & Tom Porter (@porterhau5)
 
 Input names:

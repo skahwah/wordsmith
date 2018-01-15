@@ -1,6 +1,16 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [2.1.1] - 2018-01-15
+### Removed
+ - data.tar.xz
+ - Pruned data.tar.xz and data.tar.gz from git history to cut down on repo size. These files will now be included on the Releases page as a binary for each new version.
+
+### Changed
+ - README updated for new installation instructions
+ - wordsmith.rb updated for new installation instructions
+
+
 ## [2.1.0] - 2018-01-11
 ### Added
  - World geonames (11,332,168 new words)

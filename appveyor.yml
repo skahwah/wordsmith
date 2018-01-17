@@ -2,18 +2,19 @@
 
 before_deploy:
  - ps: Set-AppveyorBuildVariable -Name VER -Value (sls "^## " .\CHANGELOG.md | select -exp line | select -first 1 | ForEach-Object { $_.split("]")[0] } | ForEach-Object { $_.split("[")[1] })
+ - ps: Set-AppveyorBuildVariable -Name URL -Value (sls "^## " .\CHANGELOG.md | select -exp line | select -first 1 | %{ $_.Replace("[","").Replace("]","").Replace(".","").Replace(" ","-").Replace("##-","") })
 
 deploy:
   - provider: GitHub
     tag: v$(VER)
-    description: 'After cloning/downloading the Wordsmith repository for this release ($(APPVEYOR_REPO_COMMIT)), download `data.tar.xz` and place inside wordsmith directory.'
-    #force_update: true
+    description: '$(VER): See [CHANGELOG](https://github.com/skahwah/wordsmith/blob/master/CHANGELOG.md#$(URL)) for changes included with this release. After cloning/downloading the Wordsmith repository for this release ($(APPVEYOR_REPO_COMMIT)), download `data.tar.xz` and place inside wordsmith directory.'
     auth_token:
       secure: LGNzTMUPT4zvTNSh2VBYQ6Uy2JH0e79jONqr3bCB1yjHhTDxnGWSpmKWjRtItp2c
 
 # Don't actually build.
 build: off
 
+# Triggered on commits to master branch
 branches:
   only:
     - master

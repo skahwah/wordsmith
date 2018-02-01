@@ -10,7 +10,7 @@ require 'yaml'
 def title()
   @version = "v2.1.1"
   puts "wordsmith #{@version}"
-  puts "Written by: Sanjiv Kawa (@hackerjiv) & Tom Porter (@porterhau5)"
+  puts "Written by: Sanjiv Kawa (@kawabungah) & Tom Porter (@porterhau5)"
   puts ""
 end
 

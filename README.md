@@ -2,7 +2,7 @@
 
 The aim of Wordsmith is to assist with creating tailored wordlists and usernames that are primarilly based on geolocation.
 
-Authors: [@hackerjiv](https://twitter.com/hackerjiv) & [@porterhau5](https://twitter.com/porterhau5).
+Authors: [@kawabungah](https://twitter.com/kawabungah) & [@porterhau5](https://twitter.com/porterhau5).
 
 Wild West Hackin' Fest 2017 [presentation](https://www.youtube.com/watch?v=-ZNNA7Z0JGM).
 
@@ -27,7 +27,7 @@ Then download the latest `data.tar.xz` from the Releases page and place it into 
 $ cd wordsmith
 $ ruby wordsmith.rb
 wordsmith v2.1.1
-Written by: Sanjiv Kawa (@hackerjiv) & Tom Porter (@porterhau5)
+Written by: Sanjiv Kawa (@kawabungah) & Tom Porter (@porterhau5)
 
 [!] data/regions.csv and data.tar.xz not detected! Try downloading data.tar.xz:
       $ wget https://github.com/skahwah/wordsmith/releases/download/v2.1.1/data.tar.xz
@@ -41,7 +41,7 @@ On next run, Wordsmith will unpack some files from `data.tar.xz` to complete the
 ``` shell
 $ ruby wordsmith.rb
 wordsmith v2.1.1
-Written by: Sanjiv Kawa (@hackerjiv) & Tom Porter (@porterhau5)
+Written by: Sanjiv Kawa (@kawabungah) & Tom Porter (@porterhau5)
 
 [*] Hello new wordsmither!
 [*] This script will remove the data/ directory in the current working directory. Enter 'y' to continue: y
@@ -55,7 +55,7 @@ Written by: Sanjiv Kawa (@hackerjiv) & Tom Porter (@porterhau5)
 ``` shell
 $ ruby wordsmith.rb
 wordsmith v2.1.1
-Written by: Sanjiv Kawa (@hackerjiv) & Tom Porter (@porterhau5)
+Written by: Sanjiv Kawa (@kawabungah) & Tom Porter (@porterhau5)
 
 Usage: ruby wordsmith.rb [options]
 Main Arguments:
@@ -122,7 +122,7 @@ Info Options:
 ```
 $ ruby wordsmith.rb -E
 wordsmith v2.1.1
-Written by: Sanjiv Kawa (@hackerjiv) & Tom Porter (@porterhau5)
+Written by: Sanjiv Kawa (@kawabungah) & Tom Porter (@porterhau5)
 
 Input names:
 ------------

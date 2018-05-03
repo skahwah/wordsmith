@@ -1,0 +1,922 @@
+{
+  "version": 1,
+  "width": 238,
+  "height": 62,
+  "duration": 135.878085,
+  "command": "/bin/zsh -l",
+  "title": null,
+  "env": {
+    "TERM": "xterm-256color",
+    "SHELL": "/bin/zsh"
+  },
+  "stdout": [
+    [
+      0.334159,
+      " ____________________________________ \r\n/ Common sense is the most evenly    \\\r\n| distributed quantity in the world. |\r\n| Everyone thinks he has enough.     |\r\n|                                    |\r\n\\ -- Descartes, 1637                 /\r\n ------------------------------------ \r\n        \\   ^__^\r\n         \\  (oo)\\_______\r\n            (__)\\       )\\/\\\r\n                ||----w |\r\n                ||     ||\r\n"
+    ],
+    [
+      0.000412,
+      "\r\n"
+    ],
+    [
+      0.018389,
+      "lo0: 127.0.0.1\r\n"
+    ],
+    [
+      0.034738,
+      "en0: 192.168.10.4\r\n"
+    ],
+    [
+      0.099446,
+      "\r\n"
+    ],
+    [
+      0.00637,
+      "\u001b]1337;RemoteHost=skawa@skawa-mbp\u0007\u001b]1337;CurrentDir=/Users/skawa/tools/GitHub/hashcat\u0007"
+    ],
+    [
+      2.5e-05,
+      "\u001b]1337;ShellIntegrationVersion=5;shell=zsh\u0007"
+    ],
+    [
+      0.129455,
+      "\u001b[1m\u001b[7m%\u001b[27m\u001b[1m\u001b[0m                                                                                                                                                                                                                                             \r \r"
+    ],
+    [
+      5.6e-05,
+      "\u001b]2;skawa@skawa-mbp: ~/tools/GitHub/hashcat\u0007\u001b]1;..itHub/hashcat\u0007"
+    ],
+    [
+      0.002498,
+      "\r\n"
+    ],
+    [
+      8.1e-05,
+      "\u001b[01;32mskawa\u001b[00m\u001b[1m\u001b[32m@skawa-mbp\u001b[00m \u001b[01;34m~/tools/GitHub/hashcat\u001b[00m                                                                                                                                                                                                 \u001b[1m\u001b[32m[18:57]\u001b[00m\r\n"
+    ],
+    [
+      0.000187,
+      "\u001b]133;D;1\u0007\u001b]1337;RemoteHost=skawa@skawa-mbp\u0007\u001b]1337;CurrentDir=/Users/skawa/tools/GitHub/hashcat\u0007"
+    ],
+    [
+      0.141267,
+      "\r\u001b[0m\u001b[27m\u001b[24m\u001b[J\u001b]133;A\u0007\u001b[31m❯\u001b[00m \u001b]133;B\u0007"
+    ],
+    [
+      3.1e-05,
+      "\u001b[K\u001b[222C [\u001b[01;32m±\u001b[00m\u001b[01;37mmaster \u001b[01;33m●\u001b[00m\u001b[01;31m●\u001b[00m\u001b[00m]\u001b[235D"
+    ],
+    [
+      9.5e-05,
+      "\u001b[?1h\u001b="
+    ],
+    [
+      4.1e-05,
+      "\u001b[?2004h"
+    ],
+    [
+      0.844447,
+      "r"
+    ],
+    [
+      0.077254,
+      "\brm"
+    ],
+    [
+      0.05676,
+      " "
+    ],
+    [
+      0.179924,
+      "h"
+    ],
+    [
+      0.067426,
+      "a"
+    ],
+    [
+      0.066717,
+      "s"
+    ],
+    [
+      0.090422,
+      "h"
+    ],
+    [
+      0.438802,
+      "\u0007"
+    ],
+    [
+      2.3e-05,
+      "\r\r\n"
+    ],
+    [
+      8.1e-05,
+      "\u001b[J\u001b[0mhash              \u001b[J\u001b[1;32mhashcat\u001b[0m*          \u001b[Jhashcat.dictstat  \u001b[Jhashcat.hcstat    \u001b[Jhashcat.hctune    \u001b[Jhashcat.log       \u001b[Jhashcat.potfile   \u001b[Jhashcat.restore \u001b[J\u001b[A\u001b[0m\u001b[27m\u001b[24m\r\u001b[2Crm hash\u001b[K\u001b[215C [\u001b[01;32m±\u001b[00m\u001b[01;37mmaster \u001b[01;33m●\u001b[00m\u001b[01;31m●\u001b[00m\u001b[00m]\u001b[228D"
+    ],
+    [
+      0.429184,
+      "c"
+    ],
+    [
+      0.042646,
+      "a"
+    ],
+    [
+      0.585779,
+      "t"
+    ],
+    [
+      0.151727,
+      "\u0007\r\r\n\u001b[J"
+    ],
+    [
+      3.9e-05,
+      "\u001b[J\u001b[1;32mhashcat\u001b[0m*          \u001b[Jhashcat.dictstat  \u001b[Jhashcat.hcstat    \u001b[Jhashcat.hctune    \u001b[Jhashcat.log       \u001b[Jhashcat.potfile   \u001b[Jhashcat.restore \u001b[J\u001b[A\u001b[0m\u001b[27m\u001b[24m\r\u001b[2Crm hashcat\u001b[K\u001b[212C [\u001b[01;32m±\u001b[00m\u001b[01;37mmaster \u001b[01;33m●\u001b[00m\u001b[01;31m●\u001b[00m\u001b[00m]\u001b[225D"
+    ],
+    [
+      0.153027,
+      "."
+    ],
+    [
+      0.291472,
+      "p"
+    ],
+    [
+      0.056331,
+      "o"
+    ],
+    [
+      0.174169,
+      "tfile\u001b[1m \u001b[0m"
+    ],
+    [
+      0.838311,
+      "\b\u001b[0m \b"
+    ],
+    [
+      4.4e-05,
+      "\u001b[?1l\u001b>"
+    ],
+    [
+      0.000106,
+      "\u001b[?2004l\r\r\n\u001b[J"
+    ],
+    [
+      0.001409,
+      "\u001b]2;rm hashcat.potfile\u0007\u001b]1;rm\u0007"
+    ],
+    [
+      3.2e-05,
+      "\u001b]133;C;\u0007"
+    ],
+    [
+      0.005015,
+      "\u001b[1m\u001b[7m%\u001b[27m\u001b[1m\u001b[0m                                                                                                                                                                                                                                             \r \r"
+    ],
+    [
+      2.9e-05,
+      "\u001b]2;skawa@skawa-mbp: ~/tools/GitHub/hashcat\u0007"
+    ],
+    [
+      1.3e-05,
+      "\u001b]1;..itHub/hashcat\u0007"
+    ],
+    [
+      0.002543,
+      "\r\n"
+    ],
+    [
+      2.1e-05,
+      "\u001b[01;32mskawa\u001b[00m\u001b[1m\u001b[32m@skawa-mbp\u001b[00m \u001b[01;34m~/tools/GitHub/hashcat\u001b[00m                                                                                                                                                                                                 \u001b[1m\u001b[32m[18:57]\u001b[00m\r\n"
+    ],
+    [
+      9.6e-05,
+      "\u001b]133;D;0\u0007\u001b]1337;RemoteHost=skawa@skawa-mbp\u0007\u001b]1337;CurrentDir=/Users/skawa/tools/GitHub/hashcat\u0007"
+    ],
+    [
+      0.127915,
+      "\r\u001b[0m\u001b[27m\u001b[24m\u001b[J\u001b]133;A\u0007\u001b[31m❯\u001b[00m \u001b]133;B\u0007\u001b[K\u001b[222C [\u001b[01;32m±\u001b[00m\u001b[01;37mmaster \u001b[01;33m●\u001b[00m\u001b[01;31m●\u001b[00m\u001b[00m]\u001b[235D"
+    ],
+    [
+      9.3e-05,
+      "\u001b[?1h\u001b="
+    ],
+    [
+      4.9e-05,
+      "\u001b[?2004h"
+    ],
+    [
+      1.436687,
+      "."
+    ],
+    [
+      0.05725,
+      "\b./"
+    ],
+    [
+      0.258587,
+      "h"
+    ],
+    [
+      0.044956,
+      "a"
+    ],
+    [
+      0.044959,
+      "s"
+    ],
+    [
+      0.189961,
+      "hcat\u001b[1m \u001b[0m"
+    ],
+    [
+      2.364105,
+      "\b\u001b[0m -"
+    ],
+    [
+      0.19123,
+      "m"
+    ],
+    [
+      0.11163,
+      " "
+    ],
+    [
+      0.169852,
+      "1"
+    ],
+    [
+      0.067323,
+      "0"
+    ],
+    [
+      0.123451,
+      "0"
+    ],
+    [
+      0.371479,
+      "0"
+    ],
+    [
+      0.168797,
+      " "
+    ],
+    [
+      0.101287,
+      "-"
+    ],
+    [
+      0.258635,
+      "a"
+    ],
+    [
+      0.157423,
+      " "
+    ],
+    [
+      0.135259,
+      "0"
+    ],
+    [
+      0.146064,
+      " "
+    ],
+    [
+      0.180121,
+      "-"
+    ],
+    [
+      1.945539,
+      "\b \b"
+    ],
+    [
+      0.420538,
+      "\u001b[7m~/proj/GitHub/wordsmith-v2\u001b[27m"
+    ],
+    [
+      1.11029,
+      "\u001b[26D\u001b[27m~\u001b[27m/\u001b[27mp\u001b[27mr\u001b[27mo\u001b[27mj\u001b[27m/\u001b[27mG\u001b[27mi\u001b[27mt\u001b[27mH\u001b[27mu\u001b[27mb\u001b[27m/\u001b[27mw\u001b[27mo\u001b[27mr\u001b[27md\u001b[27ms\u001b[27mm\u001b[27mi\u001b[27mt\u001b[27mh\u001b[27m-\u001b[27mv\u001b[27m2/"
+    ],
+    [
+      0.190526,
+      "h"
+    ],
+    [
+      0.056659,
+      "a"
+    ],
+    [
+      0.045155,
+      "s"
+    ],
+    [
+      0.090046,
+      "h"
+    ],
+    [
+      0.118753,
+      "es\u001b[1m/\u001b[0m"
+    ],
+    [
+      0.308556,
+      "\b\u001b[0m/i"
+    ],
+    [
+      0.101435,
+      "r"
+    ],
+    [
+      0.035633,
+      "e"
+    ],
+    [
+      0.183378,
+      "land-ntlm.hash\u001b[1m \u001b[0m"
+    ],
+    [
+      1.232455,
+      "\b\u001b[0m -"
+    ],
+    [
+      0.866128,
+      "r"
+    ],
+    [
+      0.067304,
+      " "
+    ],
+    [
+      1.192853,
+      "r"
+    ],
+    [
+      0.044742,
+      "u"
+    ],
+    [
+      0.150436,
+      "les\u001b[1m/\u001b[0m"
+    ],
+    [
+      0.670948,
+      "\b\u001b[0m/d"
+    ],
+    [
+      0.449776,
+      "3"
+    ],
+    [
+      0.146587,
+      "a"
+    ],
+    [
+      1.001065,
+      "d"
+    ],
+    [
+      0.39744,
+      "\u0007\r\r\n"
+    ],
+    [
+      3.4e-05,
+      "\u001b[J\u001b[0md3ad0ne.rule   \u001b[Jd3adhob0.rule\u001b[J\u001b[A\u001b[0m\u001b[27m\u001b[24m\r\u001b[2C./hashcat -m 1000 -a 0 ~/proj/GitHub/wordsmith-v2/hashes/ireland-ntlm.hash -r rules/d3ad\u001b[K\u001b[134C [\u001b[01;32m±\u001b[00m\u001b[01;37mmaster \u001b[01;33m●\u001b[00m\u001b[01;31m●\u001b[00m\u001b[00m]\u001b[147D"
+    ],
+    [
+      0.357369,
+      "\b \b"
+    ],
+    [
+      0.217862,
+      "\r\r\n\u001b[J\u001b[A\u001b[89Cd"
+    ],
+    [
+      0.368209,
+      "\u0007\r\r\n\u001b[J"
+    ],
+    [
+      2.4e-05,
+      "\u001b[J\u001b[0md3ad0ne.rule   \u001b[Jd3adhob0.rule\u001b[J\u001b[A\u001b[0m\u001b[27m\u001b[24m\r\u001b[2C./hashcat -m 1000 -a 0 ~/proj/GitHub/wordsmith-v2/hashes/ireland-ntlm.hash -r rules/d3ad\u001b[K\u001b[134C [\u001b[01;32m±\u001b[00m\u001b[01;37mmaster \u001b[01;33m●\u001b[00m\u001b[01;31m●\u001b[00m\u001b[00m]\u001b[147D"
+    ],
+    [
+      0.611357,
+      "0ne.rule\r\r\n"
+    ],
+    [
+      3.4e-05,
+      "\u001b[J\u001b[7md3ad0ne.rule \u001b[0m  \u001b[Jd3adhob0.rule\u001b[J\u001b[A\u001b[0m\u001b[27m\u001b[24m\r\u001b[2C./hashcat -m 1000 -a 0 ~/proj/GitHub/wordsmith-v2/hashes/ireland-ntlm.hash -r rules/d3ad0ne.rule\u001b[K\u001b[126C [\u001b[01;32m±\u001b[00m\u001b[01;37mmaster \u001b[01;33m●\u001b[00m\u001b[01;31m●\u001b[00m\u001b[00m]\u001b[139D"
+    ],
+    [
+      0.151131,
+      "\r\r\n"
+    ],
+    [
+      3.7e-05,
+      "\u001b[7md3ad0ne.rule \u001b[0m  \r\u001b[7md3ad0ne.rule \u001b[0m  \r\u001b[A\u001b[0m\u001b[27m\u001b[24m\r\u001b[2C./hashcat -m 1000 -a 0 ~/proj/GitHub/wordsmith-v2/hashes/ireland-ntlm.hash -r rules/d3ad0ne.rule\u001b[K\u001b[126C [\u001b[01;32m±\u001b[00m\u001b[01;37mmaster \u001b[01;33m●\u001b[00m\u001b[01;31m●\u001b[00m\u001b[00m]\u001b[139D"
+    ],
+    [
+      0.000134,
+      "\u001b[8Dhob0.rule\r\r\n"
+    ],
+    [
+      4.9e-05,
+      "\u001b[15C\u001b[7md3adhob0.rule\u001b[0m\rd3ad0ne.rule   \r\u001b[A\u001b[0m\u001b[27m\u001b[24m\r\u001b[2C./hashcat -m 1000 -a 0 ~/proj/GitHub/wordsmith-v2/hashes/ireland-ntlm.hash -r rules/d3adhob0.rule\u001b[K\u001b[125C [\u001b[01;32m±\u001b[00m\u001b[01;37mmaster \u001b[01;33m●\u001b[00m\u001b[01;31m●\u001b[00m\u001b[00m]\u001b[138D"
+    ],
+    [
+      1.056159,
+      "\r\r\n\u001b[J\u001b[A\u001b[99C\u001b[1m \u001b[0m"
+    ],
+    [
+      2.262044,
+      "\b\u001b[0m -"
+    ],
+    [
+      0.776962,
+      "o"
+    ],
+    [
+      0.056238,
+      " "
+    ],
+    [
+      0.174323,
+      "\u001b[7m~/proj/GitHub/wordsmith-v2\u001b[27m"
+    ],
+    [
+      0.883334,
+      "\u001b[26D\u001b[27m~\u001b[27m/\u001b[27mp\u001b[27mr\u001b[27mo\u001b[27mj\u001b[27m/\u001b[27mG\u001b[27mi\u001b[27mt\u001b[27mH\u001b[27mu\u001b[27mb\u001b[27m/\u001b[27mw\u001b[27mo\u001b[27mr\u001b[27md\u001b[27ms\u001b[27mm\u001b[27mi\u001b[27mt\u001b[27mh\u001b[27m-\u001b[27mv\u001b[27m2/"
+    ],
+    [
+      0.247585,
+      "h"
+    ],
+    [
+      0.314268,
+      "a"
+    ],
+    [
+      0.163528,
+      "shes\u001b[1m/\u001b[0m"
+    ],
+    [
+      0.782177,
+      "\b\u001b[0m/r"
+    ],
+    [
+      0.03456,
+      "e"
+    ],
+    [
+      0.190279,
+      "\b \b"
+    ],
+    [
+      0.112297,
+      "\b \b"
+    ],
+    [
+      0.079011,
+      "i"
+    ],
+    [
+      0.07885,
+      "r"
+    ],
+    [
+      0.044592,
+      "e"
+    ],
+    [
+      0.292822,
+      "l"
+    ],
+    [
+      0.089906,
+      "a"
+    ],
+    [
+      0.090101,
+      "n"
+    ],
+    [
+      0.067479,
+      "d"
+    ],
+    [
+      0.224286,
+      "-"
+    ],
+    [
+      0.473204,
+      "f"
+    ],
+    [
+      0.033964,
+      "o"
+    ],
+    [
+      0.056242,
+      "u"
+    ],
+    [
+      0.157331,
+      "n"
+    ],
+    [
+      0.236399,
+      "."
+    ],
+    [
+      0.269871,
+      "\b \b"
+    ],
+    [
+      0.112073,
+      "d"
+    ],
+    [
+      0.101833,
+      "."
+    ],
+    [
+      0.112076,
+      "t"
+    ],
+    [
+      0.157775,
+      "t"
+    ],
+    [
+      0.416024,
+      "\b \b"
+    ],
+    [
+      0.090109,
+      "x"
+    ],
+    [
+      0.056406,
+      "t"
+    ],
+    [
+      0.19109,
+      " "
+    ],
+    [
+      1.738128,
+      "\u001b[7m~/proj/GitHub/wordsmith-v2\u001b[27m"
+    ],
+    [
+      0.917132,
+      "\u001b[26D\u001b[27m~\u001b[27m/\u001b[27mp\u001b[27mr\u001b[27mo\u001b[27mj\u001b[27m/\u001b[27mG\u001b[27mi\u001b[27mt\u001b[27mH\u001b[27mu\u001b[27mb\u001b[27m/\u001b[27mw\u001b[27mo\u001b[27mr\u001b[27md\u001b[27ms\u001b[27mm\u001b[27mi\u001b[27mt\u001b[27mh\u001b[27m-\u001b[27mv\u001b[27m2/"
+    ],
+    [
+      0.731052,
+      "i"
+    ],
+    [
+      0.112486,
+      "r"
+    ],
+    [
+      0.067829,
+      "e"
+    ],
+    [
+      0.196819,
+      "land-"
+    ],
+    [
+      0.950611,
+      "a"
+    ],
+    [
+      0.162681,
+      "-m.txt\u001b[1m \u001b[0m"
+    ],
+    [
+      2.548405,
+      "\b\u001b[0m \b"
+    ],
+    [
+      3.5e-05,
+      "\u001b[?1l\u001b>"
+    ],
+    [
+      0.000114,
+      "\u001b[?2004l\r\r\n\u001b[J"
+    ],
+    [
+      0.000941,
+      "\u001b]2;./hashcat -m 1000 -a 0 ~/proj/GitHub/wordsmith-v2/hashes/ireland-ntlm.hash -r\u0007\u001b]1;./hashcat\u0007\u001b]133;C;\u0007"
+    ],
+    [
+      0.008927,
+      "hashcat (v3.30-94-gc1d88f3) starting...\r\n\r\n"
+    ],
+    [
+      0.026833,
+      "OpenCL Platform #1: Apple\r\n=========================\r\n* Device #1: Intel(R) Core(TM) i7-4870HQ CPU @ 2.50GHz, skipped\r\n* Device #2: Iris Pro, 384/1536 MB allocatable, 40MCU\r\n* Device #3: AMD Radeon R9 M370X Compute Engine, 512/2048 MB allocatable, 10MCU\r\n\r\n"
+    ],
+    [
+      0.009879,
+      "Counting lines in /Users/skawa/proj/GitHub/wordsmith-v2/hashes/ireland-ntlm.hash..."
+    ],
+    [
+      0.000169,
+      "\u001b[2K\rCounted lines in /Users/skawa/proj/GitHub/wordsmith-v2/hashes/ireland-ntlm.hash..."
+    ],
+    [
+      0.000568,
+      "\u001b[2K\rParsing Hashes: 1/730 (0.14%)..."
+    ],
+    [
+      0.001893,
+      "\u001b[2K\rParsed Hashes: 730/730 (100.00%)\u001b[2K\rSorting hashes..."
+    ],
+    [
+      7.4e-05,
+      "\u001b[2K\rSorted hashes...\u001b[2K\rRemoving duplicate hashes...\u001b[2K\rRemoved duplicate hashes..."
+    ],
+    [
+      1.1e-05,
+      "\u001b[2K\rSorting salts...\u001b[2K\rSorted salts...\u001b[2K\rComparing hashes with potfile entries..."
+    ],
+    [
+      2.5e-05,
+      "\u001b[2K\rCompared hashes with potfile entries..."
+    ],
+    [
+      0.000848,
+      "\u001b[2K\rGenerating bitmap tables..."
+    ],
+    [
+      0.240356,
+      "\u001b[2K\rGenerated bitmap tables..."
+    ],
+    [
+      0.070399,
+      "\u001b[2K\rHashes: 730 digests; 533 unique digests, 1 unique salts\r\nBitmaps: 16 bits, 65536 entries, 0x0000ffff mask, 262144 bytes, 5/13 rotates\r\nRules: 57540\r\n\r\nApplicable Optimizers:\r\n* Zero-Byte\r\n* Precompute-Init\r\n* Precompute-Merkle-Demgard\r\n* Meet-In-The-Middle\r\n* Early-Skip\r\n* Not-Salted\r\n* Not-Iterated\r\n* Single-Salt\r\n* Raw-Hash\r\n\r\nWatchdog: Temperature abort trigger disabled\r\nWatchdog: Temperature retain trigger disabled\r\n\r\nInitializing device kernels and memory..."
+    ],
+    [
+      0.554125,
+      "\u001b[2K\rInitialized device kernels and memory..."
+    ],
+    [
+      0.000202,
+      "\u001b[2K\rChecking for weak hashes..."
+    ],
+    [
+      0.002447,
+      "\u001b[2K\rChecked for weak hashes..."
+    ],
+    [
+      0.04135,
+      "\u001b[2K\rCache-hit dictionary stats /Users/skawa/proj/GitHub/wordsmith-v2/ireland-a-m.txt: 10392566 bytes, 790823 words, 45503955420 keyspace\r\n\r\n"
+    ],
+    [
+      0.653545,
+      "[s]tatus [p]ause [r]esume [b]ypass [c]heckpoint [q]uit => "
+    ],
+    [
+      1.974958,
+      "s\r\n"
+    ],
+    [
+      4.2e-05,
+      "\r\n"
+    ],
+    [
+      0.010761,
+      "Session..........: hashcat\r\nStatus...........: Running\r\nHash.Type........: NTLM\r\nHash.Target......: /Users/skawa/proj/GitHub/wordsmith-v2/hashes/ireland-ntlm.hash\r\nTime.Started.....: Thu Oct  5 18:58:16 2017 (2 secs)\r\nTime.Estimated...: Thu Oct  5 18:59:10 2017 (52 secs)\r\nInput.Base.......: File (/Users/skawa/proj/GitHub/wordsmith-v2/ireland-a-m.txt)\r\nInput.Mod........: Rules (rules/d3adhob0.rule)\r\nInput.Queue......: 1/1 (100.00%)\r\nSpeed.Dev.#2.....:   184.5 MH/s (12.77ms)\r\nSpeed.Dev.#3.....:   625.0 MH/s (7.80ms)\r\nSpeed.Dev.#*.....:   809.9 MH/s\r\nRecovered........: 15/533 (2.81%) Digests, 0/1 (0.00%) Salts\r\nProgress.........: 3215456660/45503955420 (7.07%)\r\nRejected.........: 1656519060/3215456660 (51.52%)\r\nRestore.Point....: 0/790823 (0.00%)\r\nCandidates.#2....: Caillech1580 -> Halfcracked1590\r\nCandidates.#3....: \"10714 -> Half-discriminated759\r\n"
+    ],
+    [
+      3.7e-05,
+      "\r\n[s]tatus [p]ause [r]esume [b]ypass [c]heckpoint [q]uit => "
+    ],
+    [
+      0.259091,
+      "s"
+    ],
+    [
+      1.8e-05,
+      "\r\n\r\n"
+    ],
+    [
+      0.010348,
+      "Session..........: hashcat\r\nStatus...........: Running\r\nHash.Type........: NTLM\r\nHash.Target......: /Users/skawa/proj/GitHub/wordsmith-v2/hashes/ireland-ntlm.hash\r\nTime.Started.....: Thu Oct  5 18:58:16 2017 (2 secs)\r\nTime.Estimated...: Thu Oct  5 18:59:09 2017 (51 secs)\r\nInput.Base.......: File (/Users/skawa/proj/GitHub/wordsmith-v2/ireland-a-m.txt)\r\nInput.Mod........: Rules (rules/d3adhob0.rule)\r\nInput.Queue......: 1/1 (100.00%)\r\nSpeed.Dev.#2.....:   184.7 MH/s (12.77ms)\r\nSpeed.Dev.#3.....:   633.8 MH/s (7.62ms)\r\nSpeed.Dev.#*.....:   819.4 MH/s\r\nRecovered........: 17/533 (3.19%) Digests, 0/1 (0.00%) Salts\r\nProgress.........: 3441187220/45503955420 (7.56%)\r\nRejected.........: 1656519060/3441187220 (48.14%)\r\nRestore.Point....: 0/790823 (0.00%)\r\nCandidates.#2....: Caillech1800 -> Halfcracked1810\r\nCandidates.#3....: \"10018* -> Half-discriminated023*\r\n\r\n[s]tatus [p]ause [r]esume [b]ypass [c]heckpoint [q]uit => "
+    ],
+    [
+      0.21488,
+      "s"
+    ],
+    [
+      3e-05,
+      "\r\n\r\n"
+    ],
+    [
+      0.008161,
+      "Session..........: hashcat\r\nStatus...........: Running\r\nHash.Type........: NTLM\r\nHash.Target......: /Users/skawa/proj/GitHub/wordsmith-v2/hashes/ireland-ntlm.hash\r\nTime.Started.....: Thu Oct  5 18:58:16 2017 (2 secs)\r\nTime.Estimated...: Thu Oct  5 18:59:09 2017 (51 secs)\r\nInput.Base.......: File (/Users/skawa/proj/GitHub/wordsmith-v2/ireland-a-m.txt)\r\nInput.Mod........: Rules (rules/d3adhob0.rule)\r\nInput.Queue......: 1/1 (100.00%)\r\nSpeed.Dev.#2.....:   185.4 MH/s (12.77ms)\r\nSpeed.Dev.#3.....:   631.7 MH/s (7.62ms)\r\nSpeed.Dev.#*.....:   817.1 MH/s\r\nRecovered........: 18/533 (3.38%) Digests, 0/1 (0.00%) Salts\r\nProgress.........: 3623213460/45503955420 (7.96%)\r\nRejected.........: 1656519060/3623213460 (45.72%)\r\nRestore.Point....: 0/790823 (0.00%)\r\nCandidates.#2....: Caillech1987 -> Halfcracked1997\r\nCandidates.#3....: \"10151& -> Half-discriminated156&\r\n\r\n[s]tatus [p]ause [r]esume [b]ypass [c]heckpoint [q]uit => "
+    ],
+    [
+      7.723798,
+      "\r                                                          \rINFO: approaching final keyspace, workload adjusted\r\n\r\n[s]tatus [p]ause [r]esume [b]ypass [c]heckpoint [q]uit => "
+    ],
+    [
+      1.15623,
+      "s"
+    ],
+    [
+      4.2e-05,
+      "\r\n\r\n"
+    ],
+    [
+      0.017113,
+      "Session..........: hashcat\r\nStatus...........: Running\r\nHash.Type........: NTLM\r\nHash.Target......: /Users/skawa/proj/GitHub/wordsmith-v2/hashes/ireland-ntlm.hash\r\nTime.Started.....: Thu Oct  5 18:58:16 2017 (11 secs)\r\nTime.Estimated...: Thu Oct  5 18:59:15 2017 (48 secs)\r\nInput.Base.......: File (/Users/skawa/proj/GitHub/wordsmith-v2/ireland-a-m.txt)\r\nInput.Mod........: Rules (rules/d3adhob0.rule)\r\nInput.Queue......: 1/1 (100.00%)\r\nSpeed.Dev.#2.....:   181.7 MH/s (12.94ms)\r\nSpeed.Dev.#3.....:   529.9 MH/s (9.12ms)\r\nSpeed.Dev.#*.....:   711.4 MH/s\r\n"
+    ],
+    [
+      5.7e-05,
+      "Recovered........: 38/533 (7.13%) Digests, 0/1 (0.00%) Salts\r\nProgress.........: 10833132120/45503955420 (23.81%)\r\nRejected.........: 1656576600/10833132120 (15.29%)\r\nRestore.Point....: 0/790823 (0.00%)\r\nCandidates.#2....: Caillech9280 -> Halfcracked9290\r\nCandidates.#3....: Halfcrazed5378 -> Nankin5423\r\n\r\n[s]tatus [p]ause [r]esume [b]ypass [c]heckpoint [q]uit => "
+    ],
+    [
+      0.578732,
+      "s\r\n"
+    ],
+    [
+      0.000141,
+      "\r\n"
+    ],
+    [
+      0.019058,
+      "Session..........: hashcat\r\nStatus...........: Running\r\nHash.Type........: NTLM\r\nHash.Target......: /Users/skawa/proj/GitHub/wordsmith-v2/hashes/ireland-ntlm.hash\r\nTime.Started.....: Thu Oct  5 18:58:16 2017 (12 secs)\r\nTime.Estimated...: Thu Oct  5 18:59:18 2017 (50 secs)\r\nInput.Base.......: File (/Users/skawa/proj/GitHub/wordsmith-v2/ireland-a-m.txt)\r\nInput.Mod........: Rules (rules/d3adhob0.rule)\r\nInput.Queue......: 1/1 (100.00%)\r\nSpeed.Dev.#2.....:   172.4 MH/s (13.64ms)\r\nSpeed.Dev.#3.....:   508.3 MH/s (9.48ms)\r\n"
+    ],
+    [
+      5e-05,
+      "Speed.Dev.#*.....:   682.8 MH/s\r\nRecovered........: 41/533 (7.69%) Digests, 0/1 (0.00%) Salts\r\nProgress.........: 11212278360/45503955420 (24.64%)\r\nRejected.........: 1656576600/11212278360 (14.77%)\r\nRestore.Point....: 0/790823 (0.00%)\r\nCandidates.#2....: Caillech9687 -> Halfcracked9697\r\nCandidates.#3....: Halfcrazed8000 -> Nankin8045\r\n\r\n[s]tatus [p]ause [r]esume [b]ypass [c]heckpoint [q]uit => "
+    ],
+    [
+      0.430938,
+      "s"
+    ],
+    [
+      3.1e-05,
+      "\r\n\r\n"
+    ],
+    [
+      0.012677,
+      "Session..........: hashcat\r\nStatus...........: Running\r\nHash.Type........: NTLM\r\nHash.Target......: /Users/skawa/proj/GitHub/wordsmith-v2/hashes/ireland-ntlm.hash\r\nTime.Started.....: Thu Oct  5 18:58:16 2017 (12 secs)\r\nTime.Estimated...: Thu Oct  5 18:59:20 2017 (52 secs)\r\nInput.Base.......: File (/Users/skawa/proj/GitHub/wordsmith-v2/ireland-a-m.txt)\r\nInput.Mod........: Rules (rules/d3adhob0.rule)\r\nInput.Queue......: 1/1 (100.00%)\r\nSpeed.Dev.#2.....:   163.3 MH/s (14.40ms)\r\nSpeed.Dev.#3.....:   489.1 MH/s (9.75ms)\r\nSpeed.Dev.#*.....:   651.6 MH/s\r\nRecovered........: 43/533 (8.07%) Digests, 0/1 (0.00%) Salts\r\nProgress.........: 11494328920/45503955420 (25.26%)\r\nRejected.........: 1656576600/11494328920 (14.41%)\r\n"
+    ],
+    [
+      0.000105,
+      "Restore.Point....: 0/790823 (0.00%)\r\nCandidates.#2....: Caillech9973 -> Halfcracked9983\r\nCandidates.#3....: Halfcrazed9886 -> Nankin9931\r\n\r\n[s]tatus [p]ause [r]esume [b]ypass [c]heckpoint [q]uit => "
+    ],
+    [
+      0.662892,
+      "s"
+    ],
+    [
+      2.9e-05,
+      "\r\n\r\n"
+    ],
+    [
+      0.020405,
+      "Session..........: hashcat\r\nStatus...........: Running\r\nHash.Type........: NTLM\r\nHash.Target......: /Users/skawa/proj/GitHub/wordsmith-v2/hashes/ireland-ntlm.hash\r\nTime.Started.....: Thu Oct  5 18:58:16 2017 (13 secs)\r\nTime.Estimated...: Thu Oct  5 18:59:20 2017 (51 secs)\r\nInput.Base.......: File (/Users/skawa/proj/GitHub/wordsmith-v2/ireland-a-m.txt)\r\nInput.Mod........: Rules (rules/d3adhob0.rule)\r\nInput.Queue......: 1/1 (100.00%)\r\nSpeed.Dev.#2.....:   153.1 MH/s (15.31ms)\r\nSpeed.Dev.#3.....:   502.4 MH/s (9.52ms)\r\nSpeed.Dev.#*.....:   655.6 MH/s\r\n"
+    ],
+    [
+      5.5e-05,
+      "Recovered........: 54/533 (10.13%) Digests, 0/1 (0.00%) Salts\r\nProgress.........: 11943086680/45503955420 (26.25%)\r\nRejected.........: 1656576600/11943086680 (13.87%)\r\nRestore.Point....: 0/790823 (0.00%)\r\nCandidates.#2....: Caillech424 -> Halfcracked434\r\nCandidates.#3....: Halfcrazed095% -> Nankin100%\r\n\r\n[s]tatus [p]ause [r]esume [b]ypass [c]heckpoint [q]uit => "
+    ],
+    [
+      19.407766,
+      "s"
+    ],
+    [
+      4.3e-05,
+      "\r\n\r\n"
+    ],
+    [
+      0.004417,
+      "Session..........: hashcat\r\nStatus...........: Running\r\nHash.Type........: NTLM\r\nHash.Target......: /Users/skawa/proj/GitHub/wordsmith-v2/hashes/ireland-ntlm.hash\r\nTime.Started.....: Thu Oct  5 18:58:16 2017 (33 secs)\r\nTime.Estimated...: Thu Oct  5 18:59:21 2017 (32 secs)\r\nInput.Base.......: File (/Users/skawa/proj/GitHub/wordsmith-v2/ireland-a-m.txt)\r\nInput.Mod........: Rules (rules/d3adhob0.rule)\r\nInput.Queue......: 1/1 (100.00%)\r\nSpeed.Dev.#2.....:   152.3 MH/s (15.48ms)\r\nSpeed.Dev.#3.....:   476.7 MH/s (5.44ms)\r\nSpeed.Dev.#*.....:   628.8 MH/s\r\nRecovered........: 92/533 (17.26%) Digests, 0/1 (0.00%) Salts\r\nProgress.........: 24774228970/45503955420 (54.44%)\r\nRejected.........: 1656634140/24774228970 (6.69%)\r\nRestore.Point....: 0/790823 (0.00%)\r\n"
+    ],
+    [
+      3.4e-05,
+      "Candidates.#2....: 1915Caillech% -> 2915Halfcracked^\r\nCandidates.#3....: Pondicherry989? -> Scabbles994?\r\n\r\n[s]tatus [p]ause [r]esume [b]ypass [c]heckpoint [q]uit => "
+    ],
+    [
+      0.445723,
+      "s"
+    ],
+    [
+      3e-05,
+      "\r\n\r\n"
+    ],
+    [
+      0.012712,
+      "Session..........: hashcat\r\nStatus...........: Running\r\nHash.Type........: NTLM\r\nHash.Target......: /Users/skawa/proj/GitHub/wordsmith-v2/hashes/ireland-ntlm.hash\r\nTime.Started.....: Thu Oct  5 18:58:16 2017 (33 secs)\r\nTime.Estimated...: Thu Oct  5 18:59:23 2017 (34 secs)\r\nInput.Base.......: File (/Users/skawa/proj/GitHub/wordsmith-v2/ireland-a-m.txt)\r\nInput.Mod........: Rules (rules/d3adhob0.rule)\r\nInput.Queue......: 1/1 (100.00%)\r\nSpeed.Dev.#2.....:   152.2 MH/s (15.48ms)\r\nSpeed.Dev.#3.....:   439.7 MH/s (5.91ms)\r\nSpeed.Dev.#*.....:   591.2 MH/s\r\nRecovered........: 92/533 (17.26%) Digests, 0/1 (0.00%) Salts\r\nProgress.........: 25027011690/45503955420 (55.00%)\r\nRejected.........: 1656634140/25027011690 (6.62%)\r\nRestore.Point....: 0/790823 (0.00%)\r\n"
+    ],
+    [
+      6e-05,
+      "Candidates.#2....: 1095Caillech& -> 2095Halfcracked*\r\nCandidates.#3....: 2996Pondicherry& -> 1007Scabbles&\r\n\r\n[s]tatus [p]ause [r]esume [b]ypass [c]heckpoint [q]uit => "
+    ],
+    [
+      0.583476,
+      "s"
+    ],
+    [
+      3.1e-05,
+      "\r\n\r\n"
+    ],
+    [
+      0.021484,
+      "Session..........: hashcat\r\nStatus...........: Running\r\nHash.Type........: NTLM\r\nHash.Target......: /Users/skawa/proj/GitHub/wordsmith-v2/hashes/ireland-ntlm.hash\r\nTime.Started.....: Thu Oct  5 18:58:16 2017 (34 secs)\r\nTime.Estimated...: Thu Oct  5 18:59:25 2017 (35 secs)\r\nInput.Base.......: File (/Users/skawa/proj/GitHub/wordsmith-v2/ireland-a-m.txt)\r\nInput.Mod........: Rules (rules/d3adhob0.rule)\r\nInput.Queue......: 1/1 (100.00%)\r\nSpeed.Dev.#2.....:   152.1 MH/s (15.49ms)\r\nSpeed.Dev.#3.....:   423.7 MH/s (6.14ms)\r\nSpeed.Dev.#*.....:   576.1 MH/s\r\nRecovered........: 92/533 (17.26%) Digests, 0/1 (0.00%) Salts\r\nProgress.........: 25371258300/45503955420 (55.76%)\r\nRejected.........: 1656634140/25371258300 (6.53%)\r\nRestore.Point....: 0/790823 (0.00%)\r\nCandidates.#2....: 2007Caillech? -> 2917Halfcracked!\r\nCandidates.#3....: Pondicherry2042* -> Scabbles2047*\r\n\r\n[s]tatus [p]ause [r]esume [b]ypass [c]heckpoint [q]uit => "
+    ],
+    [
+      45.310758,
+      "\r                                                          \r\r\nSession..........: hashcat\r\nStatus...........: Exhausted\r\nHash.Type........: NTLM\r\nHash.Target......: /Users/skawa/proj/GitHub/wordsmith-v2/hashes/ireland-ntlm.hash\r\nTime.Started.....: Thu Oct  5 18:58:16 2017 (1 min, 19 secs)\r\nTime.Estimated...: Thu Oct  5 18:59:35 2017 (0 secs)\r\nInput.Base.......: File (/Users/skawa/proj/GitHub/wordsmith-v2/ireland-a-m.txt)\r\nInput.Mod........: Rules (rules/d3adhob0.rule)\r\nInput.Queue......: 1/1 (100.00%)\r\nSpeed.Dev.#2.....:   166.4 MH/s (14.04ms)\r\nSpeed.Dev.#3.....:   414.4 MH/s (3.11ms)\r\nSpeed.Dev.#*.....:   580.8 MH/s\r\n"
+    ],
+    [
+      4.3e-05,
+      "Recovered........: 101/533 (18.95%) Digests, 0/1 (0.00%) Salts\r\nProgress.........: 45503955420/45503955420 (100.00%)\r\nRejected.........: 3268272000/45503955420 (7.18%)\r\nRestore.Point....: 0/790823 (0.00%)\r\nCandidates.#2....: 9Caillech -> ?halfcracked\r\nCandidates.#3....: unstr@!ghtforw@rd -> ?ï»¿55.0238Â°N\r\n\r\n"
+    ],
+    [
+      1.810006,
+      "Started: Thu Oct  5 18:58:14 2017\r\n\u001b[2K\rStopped: Thu Oct  5 18:59:37 2017\r\n"
+    ],
+    [
+      0.017139,
+      "\u001b[1m\u001b[7m%\u001b[27m\u001b[1m\u001b[0m                                                                                                                                                                                                                                             \r \r"
+    ],
+    [
+      0.000144,
+      "\u001b]2;skawa@skawa-mbp: ~/tools/GitHub/hashcat\u0007"
+    ],
+    [
+      3e-05,
+      "\u001b]1;..itHub/hashcat\u0007"
+    ],
+    [
+      0.003386,
+      "\r\n"
+    ],
+    [
+      2.5e-05,
+      "\u001b[01;32mskawa\u001b[00m\u001b[1m\u001b[32m@skawa-mbp\u001b[00m \u001b[01;34m~/tools/GitHub/hashcat\u001b[00m                                                                                                                                                                                                 \u001b[1m\u001b[32m[18:59]\u001b[00m\r\n"
+    ],
+    [
+      0.000185,
+      "\u001b]133;D;1\u0007\u001b]1337;RemoteHost=skawa@skawa-mbp\u0007\u001b]1337;CurrentDir=/Users/skawa/tools/GitHub/hashcat\u0007"
+    ],
+    [
+      0.146653,
+      "\r\u001b[0m\u001b[27m\u001b[24m\u001b[J\u001b]133;A\u0007\u001b[31m❯\u001b[00m \u001b]133;B\u0007\u001b[K\u001b[222C [\u001b[01;32m±\u001b[00m\u001b[01;37mmaster \u001b[01;33m●\u001b[00m\u001b[01;31m●\u001b[00m\u001b[00m]\u001b[235D"
+    ],
+    [
+      9.9e-05,
+      "\u001b[?1h\u001b="
+    ],
+    [
+      1.9e-05,
+      "\u001b[?2004h"
+    ],
+    [
+      8.513903,
+      "e"
+    ],
+    [
+      0.247529,
+      "\bei"
+    ],
+    [
+      0.663304,
+      "\b\be \b"
+    ],
+    [
+      0.202457,
+      "\bex"
+    ],
+    [
+      0.090393,
+      "i"
+    ],
+    [
+      0.112648,
+      "t"
+    ],
+    [
+      1.079825,
+      "\u001b[?1l\u001b>"
+    ],
+    [
+      3.6e-05,
+      "\u001b[?2004l\r\r\n"
+    ],
+    [
+      0.005403,
+      "\u001b]2;exit\u0007\u001b]1;exit\u0007"
+    ],
+    [
+      2.4e-05,
+      "\u001b]133;C;\u0007"
+    ]
+  ]
+}

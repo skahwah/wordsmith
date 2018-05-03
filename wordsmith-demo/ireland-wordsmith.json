@@ -1,0 +1,554 @@
+{
+  "version": 1,
+  "width": 238,
+  "height": 62,
+  "duration": 45.087199,
+  "command": "/bin/zsh -l",
+  "title": null,
+  "env": {
+    "TERM": "xterm-256color",
+    "SHELL": "/bin/zsh"
+  },
+  "stdout": [
+    [
+      0.321195,
+      " _______________________________________ \r\n/ I know things about TROY DONAHUE that \\\r\n\\ can't even be PRINTED!!               /\r\n --------------------------------------- \r\n        \\   ^__^\r\n         \\  (oo)\\_______\r\n            (__)\\       )\\/\\\r\n                ||----w |\r\n                ||     ||\r\n"
+    ],
+    [
+      0.000546,
+      "\r\n"
+    ],
+    [
+      0.019178,
+      "lo0: 127.0.0.1\r\n"
+    ],
+    [
+      0.034351,
+      "en0: 192.168.10.4\r\n"
+    ],
+    [
+      0.102586,
+      "\r\n"
+    ],
+    [
+      0.005788,
+      "\u001b]1337;RemoteHost=skawa@skawa-mbp\u0007\u001b]1337;CurrentDir=/Users/skawa/proj/GitHub/wordsmith-v2\u0007"
+    ],
+    [
+      2.5e-05,
+      "\u001b]1337;ShellIntegrationVersion=5;shell=zsh\u0007"
+    ],
+    [
+      0.131318,
+      "\u001b[1m\u001b[7m%\u001b[27m\u001b[1m\u001b[0m                                                                                                                                                                                                                                             \r \r\u001b]2;skawa@skawa-mbp: ~/proj/GitHub/wordsmith-v2\u0007"
+    ],
+    [
+      2.5e-05,
+      "\u001b]1;../wordsmith-v2\u0007"
+    ],
+    [
+      0.002263,
+      "\r\n"
+    ],
+    [
+      2.9e-05,
+      "\u001b[01;32mskawa\u001b[00m\u001b[1m\u001b[32m@skawa-mbp\u001b[00m \u001b[01;34m~/proj/GitHub/wordsmith-v2\u001b[00m                                                                                                                                                                                             \u001b[1m\u001b[32m[18:53]\u001b[00m\r\n"
+    ],
+    [
+      8.5e-05,
+      "\u001b]133;D;1\u0007\u001b]1337;RemoteHost=skawa@skawa-mbp\u0007"
+    ],
+    [
+      4.8e-05,
+      "\u001b]1337;CurrentDir=/Users/skawa/proj/GitHub/wordsmith-v2\u0007"
+    ],
+    [
+      0.11213,
+      "\r\u001b[0m\u001b[27m\u001b[24m\u001b[J\u001b]133;A\u0007\u001b[31m❯\u001b[00m \u001b]133;B\u0007"
+    ],
+    [
+      3.5e-05,
+      "\u001b[K\u001b[222C [\u001b[01;32m±\u001b[00m\u001b[01;37mmaster \u001b[01;33m●\u001b[00m\u001b[01;31m●\u001b[00m\u001b[00m]\u001b[235D"
+    ],
+    [
+      3.5e-05,
+      "\u001b[?1h\u001b="
+    ],
+    [
+      5.2e-05,
+      "\u001b[?2004h"
+    ],
+    [
+      0.547563,
+      "r"
+    ],
+    [
+      0.066203,
+      "\bru"
+    ],
+    [
+      0.145165,
+      "b"
+    ],
+    [
+      0.147025,
+      "y"
+    ],
+    [
+      0.090219,
+      " "
+    ],
+    [
+      0.190978,
+      "w"
+    ],
+    [
+      0.10158,
+      "o"
+    ],
+    [
+      0.190693,
+      "r"
+    ],
+    [
+      0.07912,
+      "r"
+    ],
+    [
+      0.344313,
+      "\u0007"
+    ],
+    [
+      0.241146,
+      "\b \b"
+    ],
+    [
+      0.097464,
+      "dsmith.rb\u001b[1m \u001b[0m"
+    ],
+    [
+      0.599653,
+      "\b\u001b[0m -"
+    ],
+    [
+      0.201845,
+      "I"
+    ],
+    [
+      0.079064,
+      " "
+    ],
+    [
+      0.529005,
+      "i"
+    ],
+    [
+      0.089924,
+      "r"
+    ],
+    [
+      0.101269,
+      "l"
+    ],
+    [
+      0.05613,
+      " "
+    ],
+    [
+      0.954941,
+      "-"
+    ],
+    [
+      1.317831,
+      "q"
+    ],
+    [
+      0.271116,
+      " "
+    ],
+    [
+      0.167355,
+      "-"
+    ],
+    [
+      0.236568,
+      "h"
+    ],
+    [
+      0.550802,
+      "\u001b[?1l\u001b>"
+    ],
+    [
+      2.6e-05,
+      "\u001b[?2004l\r\r\n"
+    ],
+    [
+      0.001213,
+      "\u001b]2;ruby wordsmith.rb -I irl -q -h\u0007\u001b]1;ruby\u0007"
+    ],
+    [
+      4.8e-05,
+      "\u001b]133;C;\u0007"
+    ],
+    [
+      0.227166,
+      "wordsmith v2.0.7\r\nWritten by: Sanjiv \"Trashcan Head\" Kawa & Tom \"Pain Train\" Porter\r\nTwitter: @hackerjiv & @porterhau5\r\n\r\n"
+    ],
+    [
+      0.003258,
+      "Usage: ruby wordsmith.rb [options]\r\nMain Arguments:\r\n    -I, --input <input>              Comma-delimited list of inputs, see -E for examples and detailed usage\r\nInput Options:\r\n    -a, --all                        Grab all options\r\n    -b, --other                      Grab other miscellaneous attributes\r\n    -e, --cia                        Grab demographics compiled by the CIA\r\n    -c, --cities                     Grab all city names\r\n    -f, --colleges                   Grab all college sports\r\n    -l, --landmarks                  Grab all landmarks\r\n    -v, --language                   Grab the most popular language(s)\r\n    -N, --all-names                  Grab all first names and last names\r\n    -G, --first-names                Grab all first names\r\n    -L, --last-names                 Grab all last names\r\n    -F, --female-fnames              Grab all female first names\r\n    -M, --male-fnames                Grab all male first names\r\n    -p, --phone                      Grab all area codes\r\n    -r, --roa"
+    ],
+    [
+      2.7e-05,
+      "ds                      Grab all road names\r\n    -g, --religion                   Grab the most popular relgious text(s)\r\n    -t, --teams                      Grab all major sports teams\r\n    -u, --counties                   Grab all counties\r\n    -z, --zip                        Grab all zip codes\r\nWeb Scrape Options:\r\n    -d, --domain DOMAIN              Set a URL for a web application that you want CeWL to scrape\r\n    -i, --infile FILE                Supply a file containing multiple URLs that you want CeWL to scrape\r\nOutput Options:\r\n    -o, --output FILE                The filename for writing output\r\n    -q, --quiet                      Don't show words generated, use with -o option\r\n    -k, --min-length LEN             Minimum length of word to include\r\n    -n, --max-length LEN             Maximum length of word to include\r\n    -j, --lowercase                  Convert all words to lowercase\r\n    -w, --specials                   Add words with special characters removed\r\n    -x, --spaces                "
+    ],
+    [
+      6.6e-05,
+      "     Add words with spaces removed\r\n    -y, --split                      Split words by space and add\r\n    -m, --mangle                     Add all permutations (-w, -x, -y)\r\n    -P, --prepend-phones             Prepend state area codes to each generated word\r\n    -A, --append-phones              Append state area codes to each generated word\r\n    -X, --prepend-zips               Prepend zip codes to each generated word\r\n    -Z, --append-zips                Append zip codes to each generated word\r\n    -W, --prepend-wordlist FILE      Prepend words in FILE to each generated word\r\n    -Y, --append-wordlist FILE       Append words in FILE to each generated word\r\nInfo Options:\r\n    -C, --show-child-nodes           Show all possible child nodes for each input\r\n    -E, --examples                   Show some usage examples and detailed explanations about using wordsmith\r\n    -R, --show-regions               Show regions mapping\r\n"
+    ],
+    [
+      0.002714,
+      "\u001b[1m\u001b[7m%\u001b[27m\u001b[1m\u001b[0m                                                                                                                                                                                                                                             \r \r"
+    ],
+    [
+      0.000142,
+      "\u001b]2;skawa@skawa-mbp: ~/proj/GitHub/wordsmith-v2\u0007\u001b]1;../wordsmith-v2\u0007"
+    ],
+    [
+      0.00241,
+      "\r\n"
+    ],
+    [
+      2.6e-05,
+      "\u001b[01;32mskawa\u001b[00m\u001b[1m\u001b[32m@skawa-mbp\u001b[00m \u001b[01;34m~/proj/GitHub/wordsmith-v2\u001b[00m                                                                                                                                                                                             \u001b[1m\u001b[32m[18:53]\u001b[00m\r\n"
+    ],
+    [
+      8.4e-05,
+      "\u001b]133;D;0\u0007\u001b]1337;RemoteHost=skawa@skawa-mbp\u0007\u001b]1337;CurrentDir=/Users/skawa/proj/GitHub/wordsmith-v2\u0007"
+    ],
+    [
+      0.110832,
+      "\r\u001b[0m\u001b[27m\u001b[24m\u001b[J\u001b]133;A\u0007\u001b[31m❯\u001b[00m \u001b]133;B\u0007\u001b[K\u001b[222C [\u001b[01;32m±\u001b[00m\u001b[01;37mmaster \u001b[01;33m●\u001b[00m\u001b[01;31m●\u001b[00m\u001b[00m]\u001b[235D"
+    ],
+    [
+      8e-05,
+      "\u001b[?1h\u001b="
+    ],
+    [
+      2e-05,
+      "\u001b[?2004h"
+    ],
+    [
+      7.71869,
+      "c"
+    ],
+    [
+      0.438791,
+      "\u001b[?1l\u001b>"
+    ],
+    [
+      4.9e-05,
+      "\u001b[?2004l\r\r\n"
+    ],
+    [
+      0.000971,
+      "\u001b]2;clear\u0007\u001b]1;c\u0007"
+    ],
+    [
+      7.9e-05,
+      "\u001b]133;C;\u0007"
+    ],
+    [
+      0.005196,
+      "\u001b[H\u001b[2J"
+    ],
+    [
+      0.000427,
+      "\u001b[1m\u001b[7m%\u001b[27m\u001b[1m\u001b[0m                                                                                                                                                                                                                                             \r \r"
+    ],
+    [
+      0.000195,
+      "\u001b]2;skawa@skawa-mbp: ~/proj/GitHub/wordsmith-v2\u0007\u001b]1;../wordsmith-v2\u0007"
+    ],
+    [
+      0.002208,
+      "\r\n"
+    ],
+    [
+      2e-05,
+      "\u001b[01;32mskawa\u001b[00m\u001b[1m\u001b[32m@skawa-mbp\u001b[00m \u001b[01;34m~/proj/GitHub/wordsmith-v2\u001b[00m                                                                                                                                                                                             \u001b[1m\u001b[32m[18:54]\u001b[00m\r\n"
+    ],
+    [
+      8.5e-05,
+      "\u001b]133;D;0\u0007\u001b]1337;RemoteHost=skawa@skawa-mbp\u0007"
+    ],
+    [
+      2.4e-05,
+      "\u001b]1337;CurrentDir=/Users/skawa/proj/GitHub/wordsmith-v2\u0007"
+    ],
+    [
+      0.100364,
+      "\r\u001b[0m\u001b[27m\u001b[24m\u001b[J\u001b]133;A\u0007\u001b[31m❯\u001b[00m \u001b]133;B\u0007\u001b[K\u001b[222C [\u001b[01;32m±\u001b[00m\u001b[01;37mmaster \u001b[01;33m●\u001b[00m\u001b[01;31m●\u001b[00m\u001b[00m]\u001b[235D"
+    ],
+    [
+      4.1e-05,
+      "\u001b[?1h\u001b="
+    ],
+    [
+      5.3e-05,
+      "\u001b[?2004h"
+    ],
+    [
+      0.45332,
+      "c"
+    ],
+    [
+      0.133216,
+      "\bruby wordsmith.rb -I irl -q -h"
+    ],
+    [
+      0.923514,
+      "\b \b"
+    ],
+    [
+      0.900254,
+      "a"
+    ],
+    [
+      0.134928,
+      " "
+    ],
+    [
+      0.168841,
+      "-"
+    ],
+    [
+      0.337315,
+      "m"
+    ],
+    [
+      0.112483,
+      " "
+    ],
+    [
+      0.675107,
+      "-"
+    ],
+    [
+      0.258349,
+      "o"
+    ],
+    [
+      0.067654,
+      " "
+    ],
+    [
+      0.337619,
+      "i"
+    ],
+    [
+      0.112634,
+      "r"
+    ],
+    [
+      0.045093,
+      "e"
+    ],
+    [
+      0.393728,
+      "l"
+    ],
+    [
+      0.056103,
+      "a"
+    ],
+    [
+      0.134986,
+      "n"
+    ],
+    [
+      0.135204,
+      "d"
+    ],
+    [
+      0.404866,
+      "-"
+    ],
+    [
+      0.393717,
+      "a"
+    ],
+    [
+      0.157613,
+      "-"
+    ],
+    [
+      1.17002,
+      "m"
+    ],
+    [
+      0.933724,
+      "."
+    ],
+    [
+      0.134984,
+      "t"
+    ],
+    [
+      0.079133,
+      "x"
+    ],
+    [
+      0.078446,
+      "t"
+    ],
+    [
+      1.9902,
+      "\u001b[52D"
+    ],
+    [
+      0.518518,
+      "truby wordsmith.rb -I irl -q -a -m -o ireland-a-m.txt\u001b[52D"
+    ],
+    [
+      0.05609,
+      "\btiruby wordsmith.rb -I irl -q -a -m -o ireland-a-m.txt\u001b[52D"
+    ],
+    [
+      0.056424,
+      "mruby wordsmith.rb -I irl -q -a -m -o ireland-a-m.txt\u001b[52D"
+    ],
+    [
+      0.044903,
+      "eruby wordsmith.rb -I irl -q -a -m -o ireland-a-m.txt\u001b[52D"
+    ],
+    [
+      0.11252,
+      " ruby wordsmith.rb -I irl -q -a -m -o ireland-a-m.txt\u001b[52D"
+    ],
+    [
+      1.147685,
+      "\u001b[?1l\u001b>"
+    ],
+    [
+      3.3e-05,
+      "\u001b[?2004l\r\r\n"
+    ],
+    [
+      0.000934,
+      "\u001b]2;time ruby wordsmith.rb -I irl -q -a -m -o ireland-a-m.txt\u0007\u001b]1;time\u0007"
+    ],
+    [
+      5.1e-05,
+      "\u001b]133;C;\u0007"
+    ],
+    [
+      0.230032,
+      "wordsmith v2.0.7\r\nWritten by: Sanjiv \"Trashcan Head\" Kawa & Tom \"Pain Train\" Porter\r\nTwitter: @hackerjiv & @porterhau5\r\n\r\n"
+    ],
+    [
+      0.075746,
+      "cia in ./data/irl:    1781\r\n"
+    ],
+    [
+      0.007635,
+      "cities in ./data/irl:    1329\r\n"
+    ],
+    [
+      0.000868,
+      "counties in ./data/irl:    102\r\n"
+    ],
+    [
+      0.059133,
+      "landmarks in ./data/irl:    6601\r\n"
+    ],
+    [
+      0.40269,
+      "roads in ./data/irl:    57220\r\n"
+    ],
+    [
+      4.992859,
+      "religions:    240952\r\n"
+    ],
+    [
+      5.055267,
+      "languages:    505530\r\n"
+    ],
+    [
+      1.983257,
+      "\r\n[*] 790964 words written to: /Users/skawa/proj/GitHub/wordsmith-v2/ireland-a-m.txt\r\n"
+    ],
+    [
+      0.108236,
+      "ruby wordsmith.rb -I irl -q -a -m -o ireland-a-m.txt  12.31s user 0.43s system 98% cpu 12.915 total\r\n"
+    ],
+    [
+      3.8e-05,
+      "\u001b[1m\u001b[7m%\u001b[27m\u001b[1m\u001b[0m                                                                                                                                                                                                                                             \r \r"
+    ],
+    [
+      0.000174,
+      "\u001b]2;skawa@skawa-mbp: ~/proj/GitHub/wordsmith-v2\u0007\u001b]1;../wordsmith-v2\u0007"
+    ],
+    [
+      0.002557,
+      "\r\n"
+    ],
+    [
+      3e-05,
+      "\u001b[01;32mskawa\u001b[00m\u001b[1m\u001b[32m@skawa-mbp\u001b[00m \u001b[01;34m~/proj/GitHub/wordsmith-v2\u001b[00m                                                                                                                                                                                             \u001b[1m\u001b[32m[18:54]\u001b[00m\r\n"
+    ],
+    [
+      9.5e-05,
+      "\u001b]133;D;0\u0007"
+    ],
+    [
+      2.1e-05,
+      "\u001b]1337;RemoteHost=skawa@skawa-mbp\u0007\u001b]1337;CurrentDir=/Users/skawa/proj/GitHub/wordsmith-v2\u0007"
+    ],
+    [
+      0.104807,
+      "\r\u001b[0m\u001b[27m\u001b[24m\u001b[J\u001b]133;A\u0007\u001b[31m❯\u001b[00m \u001b]133;B\u0007\u001b[K\u001b[222C [\u001b[01;32m±\u001b[00m\u001b[01;37mmaster \u001b[01;33m●\u001b[00m\u001b[01;31m●\u001b[00m\u001b[00m]\u001b[235D"
+    ],
+    [
+      7.6e-05,
+      "\u001b[?1h\u001b="
+    ],
+    [
+      6.2e-05,
+      "\u001b[?2004h"
+    ],
+    [
+      1.612013,
+      "e"
+    ],
+    [
+      0.157237,
+      "\bex"
+    ],
+    [
+      0.112585,
+      "i"
+    ],
+    [
+      0.101205,
+      "t"
+    ],
+    [
+      0.663619,
+      "\u001b[?1l\u001b>"
+    ],
+    [
+      4e-05,
+      "\u001b[?2004l\r\r\n"
+    ],
+    [
+      0.000655,
+      "\u001b]2;exit\u0007\u001b]1;exit\u0007"
+    ],
+    [
+      0.000123,
+      "\u001b]133;C;\u0007"
+    ]
+  ]
+}
